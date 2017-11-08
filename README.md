@@ -1,4 +1,4 @@
 # gitskills
 
 Create a new branch dev.
-featuer2
+Features.
