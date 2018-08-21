@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html style='height:100%;'>
+<head>
+	<meta charset="utf-8">
+	<title>设置</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/department.css">
+
+</head>
+<body style='height:100%;'>
+<div class="menu_body" style='height:100%;'>
+	<div class="log_ico">
+	<img src="/static/img/log.png" class="img-rounded">
+	</div>
+	<div class="user_info">
+		<div class="user_ico">
+		<a href="#"><img src="/static/img/user.png" class="img-circle"></a>
+		</div>
+		<div class="user_proper">
+		<a href="#"><span class="glyphicon glyphicon-user"></span> : pengkangqian</a>
+		</div>
+	</div>
+	<div class="menu_list ">
+		<ul class="nav nav-tabs nav-stacked text-center">
+			<li><a href="/"><span class="glyphicon glyphicon-home"></span> 概览 </a> </li>
+			<li><a href="/browse"><span class="glyphicon glyphicon-globe"></span> 文件浏览</a></li>
+			<li><a href="/consumer"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
+			<li><a href="/department"><span class="glyphicon glyphicon-magnet"></span> 部门</a></li>
+			<li class="active"><a href="/deploy"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
+			<li><a href="/guider"><span class="glyphicon glyphicon-wrench"></span> 设置向导</a></li>
+		</ul>
+	</div>
+</div>
+<div class="content_body clearfix">
+	<div >
+		<ol class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li class="active">setting</li>
+		</ol>
+	</div>
+	<div class="container">
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle='tab' href="#home">Global</a></li>
+			<li><a data-toggle='tab' href="#department01">Shared</a></li>
+		</ul>
+		<br>
+		<div class="tab-content">
+			<div id="home" class="tab-pane fade in active">
+				<table class="table table-default text-center">
+					<thead>
+						<tr>
+							<td class="col-lg-4">字段名</td>
+							<td class="col-lg-4">字段值</td>
+							<td class="col-lg-4">修改</td>							
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>workgroup</td>
+							<td>MYGROUP</td>
+							<td>
+								<button type="button" class="btn btn-warning btn-xs">修改</button>
+							</td>
+						</tr>
+						<tr>
+							<td>server string</td>
+							<td>Samba server Version %v</td>
+							<td>
+								<button type="button" class="btn btn-warning btn-xs">修改</button>
+							</td>							
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-group ">
+					<button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-plus"></span> 添加属性</button>
+				</div>				
+			</div>
+			<div id="department01" class="tab-pane fade">
+				<table class="table table-default text-center">
+					<thead>
+						<tr>
+							<td class="col-lg-4">字段名</td>
+							<td class="col-lg-4">字段值</td>
+							<td class="col-lg-4">修改</td>							
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>workgroup</td>
+							<td>MYGROUP</td>
+							<td>
+								<button type="button" class="btn btn-warning btn-xs">修改</button>
+							</td>
+						</tr>
+						<tr>
+							<td>server string</td>
+							<td>Samba server Version %v</td>
+							<td>
+								<button type="button" class="btn btn-warning btn-xs">修改</button>
+							</td>							
+						</tr>
+					</tbody>
+				</table>
+				<div class="btn-group ">
+					<button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-plus"></span> 添加属性</button>
+				</div>				
+			</div>
+		</div>
+	</div>	
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html style='height:100%;'>
+<head>
+	<meta charset="utf-8">
+	<title>部门</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/department.css">
+</head>
+<body style='height:100%;'>
+<div class="menu_body" style='height:100%;'>
+	<div class="log_ico">
+	<img src="/static/img/log.png" class="img-rounded">
+	</div>
+	<div class="user_info">
+		<div class="user_ico">
+		<a href="#"><img src="/static/img/user.png" class="img-circle"></a>
+		</div>
+		<div class="user_proper">
+		<a href="#"><span class="glyphicon glyphicon-user"></span> : pengkangqian</a>
+		</div>
+	</div>
+	<div class="menu_list ">
+		<ul class="nav nav-tabs nav-stacked text-center">
+			<li ><a href="/"><span class="glyphicon glyphicon-home"></span> 概览 </a> </li>
+			<li><a href="/browse"><span class="glyphicon glyphicon-globe"></span> 文件浏览</a></li>
+			<li ><a href="/consumer"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
+			<li class="active"><a href="/department"><span class="glyphicon glyphicon-magnet"></span> 部门</a></li>
+			<li><a href="/deploy"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
+			<li><a href="/guider"><span class="glyphicon glyphicon-wrench"></span> 设置向导</a></li>
+		</ul>
+	</div>
+</div>
+<div class="content_body clearfix">
+	<div >
+		<ol class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li class="active">Department</li>
+		</ol>
+	</div>
+	<div>
+	<div class="btn-group user_manager_add pull-right clearfix">
+		<button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span> 添加部门</button>
+	</div>
+	<div >
+	 	<table class="table  text-center ">
+	 		<thead >
+	 			<tr style="line-height: 30px;">
+	 				<th class="col-lg-1 text-center"><a href='#'><span class="glyphicon glyphicon-refresh"></span></a></th>
+	 				<th class="col-lg-2 text-center">部门</th>
+	 				<th class="col-lg-5 text-center">成员</th>
+	 				<th class="col-lg-1 text-center">状态</th>
+	 				<th class="col-lg-3 text-center">操作</th>
+	 			</tr>
+	 		</thead>
+	 		<tbody>
+	 			<tr>
+	 				<td><input type="checkbox" name="userhook" class='userhook'></td>
+	 				<td class="text-primary">samba01</td>
+	 				<td class="text-primary">三巴01</td>
+	 				<td class="text-success">正常</td>
+	 				<td class="text-danger">
+	 					<div class="btn-group dropup">
+	 					<button  type="button" class="btn-xs btn btn-info"><span class="glyphicon glyphicon-edit"></span> 编辑</button>
+	 					<button  type="button" class="btn-xs btn btn-danger"><span class="glyphicon glyphicon-trash"></span> 删除</button>
+	 					</div>
+	 				</td>
+	 			</tr>
+	 			<tr>
+	 				<td><input type="checkbox" name="userhook" class='userhook'></td>
+	 				<td class="text-primary">samba02</td>
+	 				<td class="text-primary">三巴02</td>
+	 				<td class="text-success">正常</td>
+	 				<td >
+	 					<div class="btn-group dropup">
+	 					<button  type="button" class="btn-xs btn btn-info"><span class="glyphicon glyphicon-edit"></span> 编辑</button>
+	 					<button  type="button" class="btn-xs btn btn-danger"><span class="glyphicon glyphicon-trash"></span> 删除</button>
+	 					</div>
+	 		 		</td>
+	 			</tr>
+				<tr>
+	 				<td><input type="checkbox" name="userhook" class='userhook'></td>
+	 				<td class="text-primary">samba03</td>
+	 				<td class="text-primary">三巴03</td>
+	 				<td class="text-success">正常</td>
+	 				<td >
+	 					<div class="btn-group dropup">
+	 					<button  type="button" class="btn-xs btn btn-info"><span class="glyphicon glyphicon-edit"></span> 编辑</button>
+	 					<button  type="button" class="btn-xs btn btn-danger"><span class="glyphicon glyphicon-trash"></span> 删除</button>
+	 					</div>
+	 		 		</td>
+	 			</tr>
+	 			<tr>
+	 				<td class="col-lg-1"><input type="checkbox" name="Hook"></td>
+	 				<td>
+	 					<form>
+		 			 		<div class="input-group">
+							<button type="button" class="btn btn-xs btn-defualt">全选</button>
+							<button type="button" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-lock"></span> 禁用</button>
+					  		</div>
+						</form>
+	 				</td>
+	 			</tr>		 				 			
+	 		</tbody>
+	 	</table> 	
+	</div>
+  </div>
+</div>
+</body>
+</html>
