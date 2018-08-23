@@ -16,3 +16,6 @@ class Sa_deploy(models.Model):
         b.key_name = key_name
         b.value_name = value_name
         return b
+    def show(self):
+        b = Sa_deploy.objects.values()
+        return b

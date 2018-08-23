@@ -1,0 +1,88 @@
+.menu_body{
+  width: 160px;
+  background-color: #463939;
+  display: inline-block;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+.log_ico{
+  width: 160px;
+  height: 60px;
+/*  border-right::2px solid #0d7008;*/
+  border-bottom:1px solid #9d9696;
+  text-align: center;
+  line-height: 60px;
+}
+
+.user_info{
+  width: 158px;
+  height: 100px;
+/*  border: 1px solid #125f0e;*/
+}
+
+.user_ico{
+  width: 158px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+/*  border-bottom: 1px solid #0d7008;*/
+}
+.user_proper,.user_proper a{
+  width: 158px;
+  height: 27px;
+  color:#9d9696;
+  line-height: 27px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.user_proper a:hover{
+  color: #0d7008;
+}
+
+.nav-tabs>li>a{
+  margin-right: 0px;
+  border:0px;
+}
+
+.content_body{
+  width: 100%;
+  height: 100%;
+  padding-left: 160px;
+  /*background-color: #9d9696;*/
+}
+.breadcrumb{
+  margin-bottom: 10px;
+  background-color:#b2c3b1;
+}
+
+.userlist{
+  width: 100%;
+  text-align: center;
+}
+
+.img_info{
+  width: 100%;
+  height: 700px;
+ /* background-color: gold;*/
+  font-size: 0px;
+/*  margin-left: 25px;*/
+
+}
+
+.dashboard_form{
+  display: inline-block;
+  width: 600px;
+  height: 350px;
+  background-color: green;
+}
+
+.dashboard_img{
+  text-align: center;
+  height: 320px;
+  width: 600px;
+}
+
+
