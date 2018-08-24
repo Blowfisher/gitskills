@@ -7,8 +7,9 @@ sys.path.append('./..')
 from consumer.models import *
 
 def department(request):
-    data = Sa_group.objects.all()
-    return render(request,"department/department.html",{"data":data})
+    users = Sa_user().show()
+    data = Sa_group().show()
+    return render(request,"department/department.html",{"data":data,"users":users})
 
 def group_info(request):
     group = Sa_group().show()

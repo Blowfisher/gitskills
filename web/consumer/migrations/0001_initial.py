@@ -15,12 +15,14 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('groupname', models.CharField(max_length=20)),
-                ('groupath', models.CharField(max_length=32)),
                 ('desc', models.CharField(max_length=255)),
                 ('state', models.BooleanField(default=True)),
                 ('creator_time', models.DateTimeField(auto_now=True)),
                 ('group_locked', models.BooleanField(default=False)),
             ],
+            options={
+                'db_table': 'sa_group',
+            },
         ),
         migrations.CreateModel(
             name='Sa_role',
@@ -30,6 +32,9 @@ class Migration(migrations.Migration):
                 ('desc', models.CharField(max_length=255)),
                 ('stat', models.BooleanField(default=True)),
             ],
+            options={
+                'db_table': 'sa_role',
+            },
         ),
         migrations.CreateModel(
             name='Sa_user',
@@ -42,8 +47,11 @@ class Migration(migrations.Migration):
                 ('stat', models.BooleanField(default=True)),
                 ('login_ip', models.CharField(max_length=32)),
                 ('last_login', models.DateTimeField(auto_now=True)),
-                ('role_id', models.ForeignKey(to='consumer.Sa_role')),
-                ('user_group', models.ForeignKey(to='consumer.Sa_group')),
+                ('user_group', models.CharField(max_length=32)),
+                ('user_role', models.IntegerField(default=b'3')),
             ],
+            options={
+                'db_table': 'sa_user',
+            },
         ),
     ]

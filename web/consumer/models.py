@@ -12,12 +12,12 @@ class Sa_user(models.Model):
     stat = models.BooleanField(default=True)
     login_ip = models.CharField(max_length=32)
     last_login = models.DateTimeField(auto_now=True)
-    user_group = models.ForeignKey('Sa_group')
-    role_id = models.ForeignKey('Sa_role')
-    class Medata():
+    user_group = models.CharField(max_length=32)
+    user_role = models.IntegerField(default='3')
+    class Meta():
         db_table = 'sa_user'
     @classmethod
-    def creator(cls,name,pwd,group,role,desc=None,login_ip=None):
+    def creator(cls,name,pwd,group="",role="",desc="",login_ip=""):
         b = Sa_user()
         b.username = name
         b.userpwd = pwd
@@ -32,47 +32,29 @@ class Sa_user(models.Model):
 
 class Sa_group(models.Model):
     groupname = models.CharField(max_length=20)
-    groupath = models.CharField(max_length=32)
     desc = models.CharField(max_length=255)
     state = models.BooleanField(default=True)
     creator_time = models.DateTimeField(auto_now=True)
     group_locked = models.BooleanField(default=False)
-    class Medata():
+    class Meta():
         db_table = 'sa_group'
  
     @classmethod
-    def creator(cls,name,path,desc=None):
+    def creator(cls,name,desc):
         b = Sa_group()
         b.groupname = name
-        b.groupath = path
         b.desc = desc
         return b
     def show(self):
         b = Sa_group.objects.values()
         return b
    
-'''
-class Sa_root(models.Model):
-    root_name = models.CharField(max_length=20)
-    desc = models.CharField(max_length=255,blank=True)
-    creator_time = models.DateTimeField(auto_now=True)
-    stat = models.BooleanField(default=True)
-    class Medata():
-        db_table = 'sa_root'
-    
-    @classmethod
-    def creator(cls,name,desc=None):
-        b = Sa_root()
-        b.root_name = name
-        b.desc = desc
-        return b
-'''
 
 class Sa_role(models.Model):
     role_name = models.CharField(max_length=20)
     desc = models.CharField(max_length=255)
     stat = models.BooleanField(default=True)
-    class Medata():
+    class Meta():
         db_table = 'sa_role'
 
     @classmethod

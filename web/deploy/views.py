@@ -6,6 +6,7 @@ import sys
 sys.path.append('./..')
 
 from consumer.models import *
+from wsamba import *
 
 
 def deploy(request):
