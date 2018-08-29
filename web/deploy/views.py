@@ -3,7 +3,7 @@ from models import *
 import sys
 # Create your views here.
 
-sys.path.append('./..')
+'./..' in sys.path or sys.path.append('./..')
 
 from consumer.models import *
 from wsamba import *
@@ -13,7 +13,7 @@ def deploy(request):
     data = Sa_deploy().show()
     tmp =set()
     for i in data:
-        tmp.add(i["section_name"])
+        tmp.add(i["desc"])
     tmp = list(tmp)
     return render(request,"deploy/setting.html",{"section":tmp,"deploy":data})
 

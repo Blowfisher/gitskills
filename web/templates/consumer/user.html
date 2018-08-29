@@ -37,7 +37,7 @@
 {% for user in users %}
   <tr data_row_id="{{forloop.counter}}">
    <td data_cell_id="{{forloop}}-0">
-   {%if user.role_id_id == 1 %}
+   {%if user.user_role == 1 %}
     <span></span>
    {%else%}
    <input type="checkbox" data_check_box="{{user.id}}">
@@ -62,7 +62,7 @@
     {%endif%}
    </td>
    <td class="text-center" data_cell_id="{{forloop}}-5">
-   {%if user.role_id_id == 1 %}
+   {%if user.user_role == 1 %}
    <span></span>
    {%else%}
      <div class="btn-group dropup">
@@ -117,16 +117,6 @@
 	</div>
 	</div>
         <br>
-        <div class="form-group form-group-sm">
-	<label><span class="glyphicon glyphicon-star-empty"></span> 部门:</label>
-        <select class="form-control" style="width:100px;display:inline-block;">
-         <option></option>
-        {%for dpmnt in group%}
-         <option group_id="{{dpmnt.id}}">{{dpmnt.desc}}</option>
-        {%endfor%}
-        </select>
-        <div>
-        <br/>
 	<div class="form-group form-group-sm has-info" >
 	<label  ><span class="glyphicon glyphicon-star-empty"></span> 账号:</label>
 	<input type="text" name="username"  placeholder="用户账号,用户登录名">
@@ -134,7 +124,7 @@
 	</div>
 	<div class="form-group form-group-sm has-success" >
 	<label  >&nbsp;&nbsp;&nbsp;&nbsp;描述:</label>
-	<input type="text" name="username"  placeholder="账号描述信息...">
+	<input type="text" name="desc"  placeholder="账号描述信息...">
 	</div>
 	<div class="form-group form-group-sm" >
 	<label  ><span class="glyphicon glyphicon-star-empty"></span> 密码:</label>

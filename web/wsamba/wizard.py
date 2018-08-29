@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 #coding:utf8
 
@@ -8,6 +7,7 @@ from subprocess import Popen,PIPE
 import confhandler
 import dirhandler
 import userhandler
+
 
 """
 root_path = None
@@ -22,8 +22,8 @@ start smb
 mode = 770
 
 """install samba server."""
-yum cean all && yum update && yum -y install samba
-
+"""yum cean all && yum update && yum -y install samba
+"""
 
 dirhandler.Dcreater(rootpath)
 os.chmod(rootpath,mode)
@@ -53,8 +53,8 @@ for i in com_user_list:
 
     
 """{global:[{},{}]}"""
-
-def smb_set(smb_confname,args*):
+if __name__ = '__name__':
+    pass   
     
 
 

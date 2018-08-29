@@ -37,17 +37,17 @@
 	<td data_cell_id="{{forloop.counter}}-0">
 	<input type="checkbox" name="userhook" class='userhook' data_check_box="{{group.id}}">
 	</td>
-	<td class="text-primary " data_cell_id="{{forloop.counter}}-1">{{group.groupname}} &nbsp;&nbsp; <span class="label label-primary">{{group.desc}}</span>
+	<td class="text-primary " data_cell_id="{{forloop.counter}}-1">{{group.dptname}} &nbsp;&nbsp; <span class="label label-primary">{{group.desc}}</span>
 </td>
 	<td class="text-primary" data_cell_id="{{forloop.counter}}-2">
          {%for user in users%}
-         {%if user.user_group == group.groupname%}
+         {%if user.dptname == group.dptname%}
 	   <span class="label label-success">{{user.desc}}</span>
          {%endif%}
          {%endfor%}
 	</td>
 	<td class="text-success" data_cell_id="{{forloop.counter}}-3">
-          {%if group.state%}
+          {%if group.stat%}
 	  <span class="label label-success">正常</span> 
           {%else%}
 	  <span class="label label-danger">禁用</span> 

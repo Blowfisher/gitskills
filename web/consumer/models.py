@@ -5,48 +5,46 @@ from django.db.models import Manager
 
 
 class Sa_user(models.Model):
-    username = models.CharField(max_length=20)
-    desc = models.CharField(max_length=20)
+    username = models.CharField(max_length=64)
+    desc = models.CharField(max_length=64)
     userpwd = models.CharField(max_length=255)
     user_locked =models.BooleanField(default=False)
     stat = models.BooleanField(default=True)
     login_ip = models.CharField(max_length=32)
     last_login = models.DateTimeField(auto_now=True)
-    user_group = models.CharField(max_length=32)
     user_role = models.IntegerField(default='3')
     class Meta():
         db_table = 'sa_user'
     @classmethod
-    def creator(cls,name,pwd,group="",role="",desc="",login_ip=""):
+    def creator(cls,name,pwd,role="",desc="",login_ip=""):
         b = Sa_user()
         b.username = name
         b.userpwd = pwd
         b.desc = desc
-        b.user_group = group
-        b.role_id = role
+        b.user_role = role
         b.login_ip = login_ip
         return b
     def show(self):
         b = Sa_user.objects.values()
         return b
 
-class Sa_group(models.Model):
-    groupname = models.CharField(max_length=20)
+class Sa_dpt(models.Model):
+    dptname = models.CharField(max_length=64)
     desc = models.CharField(max_length=255)
-    state = models.BooleanField(default=True)
+    stat = models.BooleanField(default=True)
     creator_time = models.DateTimeField(auto_now=True)
-    group_locked = models.BooleanField(default=False)
+    dpt_locked = models.BooleanField(default=False)
     class Meta():
-        db_table = 'sa_group'
+        db_table = 'sa_dpt'
  
     @classmethod
     def creator(cls,name,desc):
-        b = Sa_group()
-        b.groupname = name
+        b = Sa_dpt()
+        b.dptname = name
         b.desc = desc
         return b
     def show(self):
-        b = Sa_group.objects.values()
+        b = Sa_dpt.objects.values()
         return b
    
 

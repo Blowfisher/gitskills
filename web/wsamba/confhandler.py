@@ -7,9 +7,10 @@ from  ConfigParser import ConfigParser
 import subprocess
 import logging
 
-from etc import conf
 
-smb_conf = conf.smb_conf
+wsamba =os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),"data")
+wsamba_conf = os.path.join(wsamba,"conf/wsamba.conf")
+wsamba_log= os.path.join(wsamba,"log/wsamba.log")
 
 
 
@@ -17,38 +18,38 @@ class Config_helper(ConfigParser):
     def __init__(self,smb_config):
         self.smb_conf = smb_config
         self.config = ConfigParser(allow_no_value=True)
-        
-    
+        self.config.read(self.smb_conf)
+    def config_save(self):
+        with open(self.smb_conf,'wb+') as f:
+            self.config.write(f) 
+
     def config_set(self,args):
         """
 	args is a list nest structor
         in a little list. need have 3 parameter. is seciton option value
 	"""
-        self._temp_list = args
+        data = args
         try:
-            with open(smb_conf,'wb') as f:
-                for i in self._temp_list: 
-                    self.sname = i[0]
-                    self.kname = i[1]
-                    self.vname = i[2]
-                    self.config.set(self.sname,self.kname,self.vname)
-                self.config.write(f)
+            for i in data: 
+                self.sname = i[0]
+                self.kname = i[1]
+                self.vname = i[2]
+                self.config.set(self.sname,self.kname,self.vname)
             return 
         except Exception as e:
+            print(e)
             return 1
 
     def config_key_get(self,sname,kname):
         self.sname = sname
         self.kname = kname   
         try:
-            with open(smb_conf,'rb') as f:
-                data = self.config.get(self.sname,self.kname)
-                return data
+            data = self.config.get(self.sname,self.kname)
+            return data
         except Exception as e:
+            print(e)
             return 1
 
-    def config_view(self):
-        return open(self.smb_conf,'r')
         
 
     def Section_get(self,sname):
@@ -59,6 +60,7 @@ class Config_helper(ConfigParser):
             data = self.config.items(self.sname)
             return data
         except Exception as e:
+            print(e)
             return 1
 
     def Create_section(self,sname):
@@ -67,14 +69,16 @@ class Config_helper(ConfigParser):
             self.config.add_section(self.sname)
             return
         except Exception as e:
+            print(e) 
             return 1
 
     def Remove_section(self,sname):
         self.sname = sname
         try:
-            self.remove_section(self.sname)
+            self.config.remove_section(self.sname)
             return
         except Exception as e:
+            print(e)
             return 1
 
     def Remove_key(self,sname,kname):
@@ -84,6 +88,7 @@ class Config_helper(ConfigParser):
             self.config.remove_option(self.sname,self.kname)
             return
         except Exception as e:
+            print(e)
             return 1
 
 
