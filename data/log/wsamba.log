@@ -1,0 +1,147 @@
+2018-09-03 15:55:22,208 INFO  Kname: samba_conf was get. 
+2018-09-03 15:55:22,209 INFO  Kname: samba_conf was get. 
+2018-09-03 15:55:22,210 INFO  Kname: samba_conf was get. 
+2018-09-03 15:55:25,598 INFO  /deploy/ 
+2018-09-03 16:02:49,209 INFO  Kname: samba_conf was get. 
+2018-09-03 16:02:49,211 INFO  Kname: samba_conf was get. 
+2018-09-03 16:02:49,212 INFO  Kname: samba_conf was get. 
+2018-09-03 16:38:24,261 INFO  Kname: samba_conf was get. 
+2018-09-03 16:38:24,264 INFO  Kname: samba_conf was get. 
+2018-09-03 16:38:24,264 INFO  Kname: samba_conf was get. 
+2018-09-03 16:40:06,004 INFO  /deploy/ 
+2018-09-03 16:46:42,384 INFO  Kname: samba_conf was get. 
+2018-09-03 16:46:42,386 INFO  Kname: samba_conf was get. 
+2018-09-03 16:46:42,387 INFO  Kname: samba_conf was get. 
+2018-09-03 16:47:09,170 INFO  Kname: samba_conf was get. 
+2018-09-03 16:47:09,172 INFO  Kname: samba_conf was get. 
+2018-09-03 16:47:09,173 INFO  Kname: samba_conf was get. 
+2018-09-03 16:53:44,384 INFO  Kname: samba_conf was get. 
+2018-09-03 16:53:44,387 INFO  Kname: samba_conf was get. 
+2018-09-03 16:53:44,388 INFO  Kname: samba_conf was get. 
+2018-09-03 17:31:09,877 INFO  /deploy/ 
+2018-09-03 18:30:53,538 INFO  Kname: samba_conf was get. 
+2018-09-03 18:30:53,539 INFO  Kname: samba_conf was get. 
+2018-09-03 18:30:53,540 INFO  Kname: samba_conf was get. 
+2018-09-04 09:12:10,449 INFO  Kname: samba_conf was get. 
+2018-09-04 09:12:10,450 INFO  Kname: samba_conf was get. 
+2018-09-04 09:12:10,450 INFO  Kname: samba_conf was get. 
+2018-09-04 09:12:10,820 WARNING  Not Found: /favicon.ico 
+2018-09-04 10:43:31,963 WARNING  Not Found: /login.cgi 
+2018-09-04 10:43:35,002 WARNING  Not Found: /login.cgi 
+2018-09-04 10:43:36,792 WARNING  Not Found: /login.cgi 
+2018-09-04 14:15:22,753 INFO  Kname: samba_conf was get. 
+2018-09-04 14:15:22,754 INFO  Kname: samba_conf was get. 
+2018-09-04 14:15:22,755 INFO  Kname: samba_conf was get. 
+2018-09-04 14:15:23,128 WARNING  Not Found: /favicon.ico 
+2018-09-04 14:21:45,033 INFO  /deploy/ 
+2018-09-04 14:45:18,151 WARNING  Not Found: /http:/112.124.42.80:63435/ 
+2018-09-04 15:03:31,085 INFO  /deploy/ 
+2018-09-04 16:42:38,945 INFO  /deploy/ 
+2018-09-04 16:42:51,652 INFO  /deploy/ 
+2018-09-04 16:42:53,179 INFO  /deploy/ 
+2018-09-04 16:42:57,566 INFO  /deploy/ 
+2018-09-04 16:46:39,508 INFO  /deploy/ 
+2018-09-04 16:49:10,876 INFO  /deploy/ 
+2018-09-05 09:09:03,922 INFO  Kname: samba_conf was get. 
+2018-09-05 09:09:03,924 INFO  Kname: samba_conf was get. 
+2018-09-05 09:09:03,925 INFO  Kname: samba_conf was get. 
+2018-09-05 09:09:04,267 WARNING  Not Found: /favicon.ico 
+2018-09-05 09:11:22,407 INFO  /deploy/ 
+2018-09-05 09:11:47,930 INFO  /deploy/ 
+2018-09-05 10:50:39,554 WARNING  Not Found: /otsmobile/app/mds/mgw.htm 
+2018-09-05 11:23:43,317 INFO  Kname: samba_conf was get. 
+2018-09-05 11:23:43,318 INFO  Kname: samba_conf was get. 
+2018-09-05 11:23:43,318 INFO  Kname: samba_conf was get. 
+2018-09-05 11:47:19,133 INFO  Kname: samba_conf was get. 
+2018-09-05 11:47:19,136 INFO  Kname: samba_conf was get. 
+2018-09-05 11:47:19,137 INFO  Kname: samba_conf was get. 
+2018-09-05 11:56:04,480 INFO  Kname: samba_conf was get. 
+2018-09-05 11:56:04,483 INFO  Kname: samba_conf was get. 
+2018-09-05 11:56:04,483 INFO  Kname: samba_conf was get. 
+2018-09-05 12:58:06,785 WARNING  Not Found: /path/to/file 
+2018-09-05 12:58:41,742 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 13:27:03,380 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 13:35:29,550 INFO  Kname: samba_conf was get. 
+2018-09-05 13:35:29,553 INFO  Kname: samba_conf was get. 
+2018-09-05 13:35:29,554 INFO  Kname: samba_conf was get. 
+2018-09-05 13:36:45,262 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 13:37:53,537 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 13:38:53,635 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 13:39:12,283 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 13:40:32,795 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 13:51:59,363 INFO  Kname: samba_conf was get. 
+2018-09-05 13:51:59,364 INFO  Kname: samba_conf was get. 
+2018-09-05 13:51:59,364 INFO  Kname: samba_conf was get. 
+2018-09-05 13:52:14,500 INFO  /deploy/ 
+2018-09-05 14:35:48,274 INFO  /deploy/ 
+2018-09-05 14:57:22,221 INFO  Kname: samba_conf was get. 
+2018-09-05 14:57:22,222 INFO  Kname: samba_conf was get. 
+2018-09-05 14:57:22,223 INFO  Kname: samba_conf was get. 
+2018-09-05 15:44:52,145 INFO  Kname: samba_conf was get. 
+2018-09-05 15:44:52,147 INFO  Kname: samba_conf was get. 
+2018-09-05 15:44:52,148 INFO  Kname: samba_conf was get. 
+2018-09-05 15:49:38,342 WARNING  Not Found: /path/to/file 
+2018-09-05 15:54:22,814 WARNING  Not Found: /login.cgi 
+2018-09-05 16:04:18,996 WARNING  Not Found: /path/to/file 
+2018-09-05 16:04:27,661 WARNING  Not Found: /path/to/file 
+2018-09-05 16:08:49,618 WARNING  Not Found: /path/to/file 
+2018-09-05 16:16:32,439 WARNING  Not Found: /path/to/file 
+2018-09-05 16:17:08,470 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 16:35:01,563 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2018-09-05 16:47:31,720 WARNING  Not Found: /login.cgi 
+2018-09-05 16:58:31,815 INFO  /deploy/ 
+2018-09-05 16:58:45,649 WARNING  Not Found: /browserconfig.xml 

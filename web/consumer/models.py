@@ -6,7 +6,7 @@ from django.db.models import Manager
 
 class Sa_user(models.Model):
     username = models.CharField(max_length=64)
-    desc = models.CharField(max_length=64)
+    desc = models.CharField(max_length=255)
     userpwd = models.CharField(max_length=255)
     user_locked =models.BooleanField(default=False)
     stat = models.BooleanField(default=True)

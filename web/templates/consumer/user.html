@@ -36,20 +36,20 @@
        </tr>
 {% for user in users %}
   <tr data_row_id="{{forloop.counter}}">
-   <td data_cell_id="{{forloop}}-0">
+   <td data_cell_id="{{forloop.counter}}-0">
    {%if user.user_role == 1 %}
     <span></span>
    {%else%}
    <input type="checkbox" data_check_box="{{user.id}}">
    {%endif%}
    </td>
-   <td class="text-primary" data_cell_id="{{forloop}}-1" >{{user.username}}</td>
-   <td class="text-primary" data_cell_id="{{forloop}}-2">{{user.desc}}</td>
-   <td class="text-warning text-center" data_cell_id="{{forloop}}-3">
+   <td class="text-primary" data_cell_id="{{forloop.counter}}-1" >{{user.username}}</td>
+   <td class="text-primary" data_cell_id="{{forloop.counter}}-2"> {{user.desc}}</td>
+   <td class="text-warning text-center" data_cell_id="{{forloop.counter}}-3">
    {%if user.user_role == 1%}
     <span class="label label-default">系统管理员</span>
    {%elif user.user_role == 2%}
-   <span class="label label-default">管理员</span>
+   <span class="label label-default">部门管理员</span>
    {%elif user.user_role == 3%}
    <span class="label label-default">用户</span>
    {%endif%}
@@ -61,7 +61,7 @@
     <span class="label label-danger" >禁用</span>
     {%endif%}
    </td>
-   <td class="text-center" data_cell_id="{{forloop}}-5">
+   <td class="text-center" data_cell_id="{{forloop.counter}}-5">
    {%if user.user_role == 1 %}
    <span></span>
    {%else%}
@@ -69,10 +69,10 @@
       <button  type="button" class="btn-xs btn btn-warning dropdown-toggle" data-toggle='dropdown' data_check_box="{{user.id}}">操作 <span class="caret"></span>
       </button>
        <ul class="dropdown-menu">
-       <li><a href="#"><span class="glyphicon glyphicon-edit" data_action='edit'></span> 编辑</a></li>
-       <li><a href="#"><span class="glyphicon glyphicon-repeat" data_action='reset-pwd'></span> 重置密码</a></li>
-       <li><a href="#"><span class="glyphicon glyphicon-lock" data_action='lock'></span> 锁定</a></li>
-       <li class='disabled'><a href="#"><span class="glyphicon glyphicon-briefcase" data_action='unlock'></span> 解锁</a></li>
+       <li data_action='edit'><a href="#"><span class="glyphicon glyphicon-edit" ></span> 编辑</a></li>
+       <li data_action='reset-pwd'><a href="#"><span class="glyphicon glyphicon-repeat"></span> 重置密码</a></li>
+       <li data_action='lock'><a href="#"><span class="glyphicon glyphicon-lock"></span> 锁定</a></li>
+       <li class='disabled' data_action='unlock'><a href="#"><span class="glyphicon glyphicon-briefcase"></span> 解锁</a></li>
       </ul>
      </div>
    {%endif%}
@@ -83,8 +83,8 @@
 </table>
 <form>
  <div class="input-group">
- <button type="button" class="btn btn-xs btn-defualt">全选</button>
- <button type="button" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span> 删除</button>
+ <button type="button" class="btn btn-xs btn-defualt" id='selector_btn' select_all=false>全选</button>
+ <button type="button" class="btn btn-xs btn-danger" id="del_btn"><span class="glyphicon glyphicon-trash"></span> 删除</button>
  </div>
 </form>
 <ul class="pager">
@@ -101,19 +101,19 @@
 <h5 class="modal-title" id="department_addlable"><span class="label label-primary"> 添加用户账号</span></h5>
 </div>
 <div class="modal-body">
-<div >
+<div id="user_info_add">
  <label><span class="glyphicon glyphicon-star-empty"></span> 角色:</label>
  <div class="dropdown" style="display: inline-block;">
  <button type="button" class="btn btn-xs dropdown-toggle" data-toggle='dropdown'>选择角色 
-<span class="caret"></span>
- </button>
+ <span class="caret"></span>
+</button>
  <ul class="dropdown-menu">
         {%for roler in role%}
 	<li><a href="javascript:;" data_selector="{{roler.id}}">
 	<span class="glyphicon glyphicon-user"></span>{{roler.desc}}</a>
 	</li>
         {%endfor%}
-	 </ul>
+</ul>
 	</div>
 	</div>
         <br>
@@ -137,10 +137,95 @@
 	</div>
 	<div class="modal-footer">
 	<button type="button" class="btn btn-info" data-dismiss="modal">返回</button>
-	<input type="submit"  class="btn btn-primary" name="department_tj" value="提交">
+	<input type="submit"  class="btn btn-primary" id='user_add_btn'"  value="提交">
    </div>
   </div>
  </div>
 </div>
+<script>
+$("[data_selector]").parent().click(function(){
+     var btn = $("[data_selector]").parent().parent().prev();
+     btn.html(this.innerText+'<span class="caret"></span>');
+     role_id = this.children[0].getAttribute("data_selector");
+     btn.attr("checkinfo",role_id);
+});
 
+
+$("#user_add_btn").click(function(){
+	urole = $("[data_selector]").parent().parent().prev().attr("checkinfo");
+	uname = $("[name='username']").prop("value");
+	udesc = $("[name='desc']").prop("value");
+	pwd1 = $("[name='pwd1']").prop("value");
+	pwd2 = $("[name='pwd2']").prop("value");
+	re = /([0-9a-zA-Z\_]){2,63}/
+    if(urole && uname && pwd1 && pwd2){
+	if (re.test(uname)){
+		if (udesc.length < 255){
+			if (pwd1 === pwd2 && pwd1.length < 255 && pwd2.length <255) {
+				if ("123".indexOf(urole)+1) {
+					$.ajax({
+						url: "/consumer",
+						type: "POST",
+						dataType: "json",
+						data: {"username":uname,"role":urole,"desc":udesc,"pwd":pwd1},
+					})
+					.done(function() {
+						console.log("success");
+					})
+					.fail(function() {
+						console.log("error");
+					})
+					.always(function() {
+	                                        $("[data_selector]").parent().parent().prev().attr("checkinfo","").html("选择角色"+'<span class="caret"></span>');
+	                                        $("[name='username']").prop("value","");
+	                                        $("[name='desc']").prop("value","");
+                                        	$("[name='pwd1']").prop("value","");
+                                               	$("[name='pwd2']").prop("value","");
+					});
+					
+				}else{ console.log("用户角色选择失败")}
+			}else{ console.log("密码格式不正确")}
+		}else{ console.log("描述信息过长")}
+	}else { console.log("用户名格式不正确。数字 字母下划线 区分大小写")}
+}else{ console.log("请完成必填项.")}})
+
+
+
+$("#del_btn").click(function(){
+	var b = $("[data_check_box]").filter("input[type='checkbox']");
+	var uidlist = [];
+	for (let i of b) {
+		if (i.checked){
+			uidlist.push(i.getAttribute("data_check_box"));
+		}
+	}
+        if (uidlist.length === 0){
+            alert("请选择需要删除的用户！");
+            return
+        }
+	result = confirm("警告！ 此操作不可逆 是否删除？")
+	if (result){
+		$.ajax({
+			url: '/path/to/file',
+			type: 'POST',
+			dataType: 'json',
+			data: {"uid": uidlist},
+		})
+		.done(function() {
+			console.log("success");
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	}else{
+		uidlist = [];
+	}
+});
+
+
+</script>
 {%endblock%}

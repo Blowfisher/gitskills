@@ -1,38 +1,42 @@
+#coding:utf-8
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from models import *
 import sys
 import json
 import base64
+import logging
 
-'./..' in sys.path or sys.path.append('./..')
 import wsamba
-from wsamba import wsuer
+from wsamba import wsuser
 from wsamba import userhandler
 from department.models import *
+
+logger = logging.getLogger('django')
 
 # Create your views here.
 
 def consumer(request):
     role = Sa_role().show()
-    group = Sa_dpt().show()
     user = Sa_user().show()
     dpment = Dpt_user().show()
     if request.is_ajax():
-        return JsonResponse(json.dumps({"user":user,"group":group,"dpment":dpment,"role":role}))
+        return JsonResponse(json.dumps({"users":user,"dpment":dpment,"role":role}))
     else:
-        return render(request,"consumer/user.html",{"users":user,"group":group,"dpment":dpment,"role":role})
+        return render(request,"consumer/user.html",{"users":user,"dpment":dpment,"role":role})
 
 
 def user_add(request):
-    name = request.POST.get('uname','')
+    name = request.POST.get('username','')
     pwd = request.POST.get('pwd','')
-    group = request.POST.get('group','')
     role = request.POST.get('role','')
     desc = request.POST.get('desc','')
 
+    if Sa_user.objects.filter(username=name):
+        return JsonResponse({"success":False,"msg":"用户已存在!"})
     b = Sa_user()
     b.creator(name,pwd,role,desc).save()
+    logger.info('USER '+name+'was add to db.')
 
     userhandler.admin_add(name)
 
@@ -94,9 +98,12 @@ def user_lock(request):
     return JsonResponse(json.dumps({"uname":name,"uid":uid,"role":role,"desc":desc,"stat":True}))    
 
 def user_del(request):
-    uid = request.GET.get('uid','')
-    userid = Sa_user.objects.get(id=uid)
-    userhandler.user_del(userid.username)
-    wsuser.wsuser(userid.username).wudel()
-    return True
+    uid = request.POST.getlist('uid','')
+    for i in uid:
+        userid = Sa_user.objects.get(id=i)
+        Dpt_user.objects.filter(username=userid.username).remove().save()
+        userhandler.user_del(userid.username)
+        wsuser.wsuser(userid.username).wudel()
+        userid.remove().save()
+    return JsonResponse({"success":True,"msg":"已删除."})
 

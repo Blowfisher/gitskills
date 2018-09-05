@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
+import os,sys
+
+'./..' in sys.path or sys.path.append('./..')
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -108,3 +110,76 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
+
+
+log_file='log/wsamba.log'
+wsamba =os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),"data")
+log_file_path = os.path.join(wsamba,log_file)
+
+if not os.path.exists(wsamba):
+    os.mkdir(wsamba)
+    os.mknod(log_file_path)
+
+LOGGING = {
+    'version': 1,
+    'disbable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s %(levelname)s  %(message)s '
+         },
+        'detail': {
+            'format': '%(asctime)s %(levelname)s  %(pathname)s[line:%(lineno)d] %(message)s '
+        }
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'detail'
+        },
+        'info': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': log_file_path,
+            'maxBytes': 1024*1024*5,
+            'backupCount':3,
+            'formatter': 'standard'
+        },
+        'warning': {
+            'level': 'WARNING',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': log_file_path,
+            'maxBytes': 1024*1024*5,
+            'backupCount':2,
+            'formatter': 'detail'
+        },
+        'error': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': log_file_path,
+            'maxBytes': 1024*1024*5,
+            'backupCount':2,
+            'formatter': 'detail'
+        },
+        'critical': {
+            'level': 'CRITICAL',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': log_file_path,
+            'maxBytes': 1024*1024*5,
+            'backupCount':2,
+            'formatter': 'detail'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['info',],
+            'level': 'INFO',
+            'propagate': True
+        },
+        'user': {
+            'handlers': ['console','info'],
+            'level': 'INFO',
+            'propagate': True
+        }
+    }
+}
