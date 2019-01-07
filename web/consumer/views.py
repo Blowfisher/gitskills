@@ -52,7 +52,6 @@ def user_add(request):
 def user_edit(request):
     name = request.POST.get('uname','')
     uid = request.POST.get('uid','')
-    pwd = request.POST.get('pwd','')
     role = request.POST.get('role','')
     desc = request.POST.get('desc','')
 

@@ -33,11 +33,11 @@
 {%else%}
 <div id="{{section_name}}" class="tab-pane fade">
 {%endif%}
- <table class="table table-bordered">
+ <table class="table table-bordered" style="width:90%">
    <thead>
-  	<tr style="background-color:pink;">
-	<td >字段名</td>
-	<td >字段值</td>
+  	<tr style="background:pink" >
+	<td style="width:20%;" >字段名</td>
+	<td >属性值</td>
 	<td style="width:30px;">修改</td>							
        	</tr>
     </thead>
@@ -56,10 +56,52 @@
 	</tbody>
 	</table>
 	<div class="btn-group ">
-	<button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-plus"></span> 添加属性</button>
+	<button type="button" class="btn btn-danger btn-xs" data_action="add_attr"><span class="glyphicon glyphicon-plus"></span> 添加属性</button>
 	</div>				
 </div>
 {%endfor%}
 </div>
 </div>	
+
+
+
+<div class="modal fade" id="action">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal">&times;</button>
+   <h3 class="modal-title" id="department_addlable"><span class="label label-primary"> 配置属性</label></h3>
+</div>
+<div class="modal-body">
+   <form>
+    <p><span class="glyphicon glyphicon-exclamation-sign text-primary"></span> 英文字母最多20个，汉字最多6个</p>
+    <div class="input-group">
+    <span class="input-group-addon ">字段名: </span>
+    <input type="text" name="department" class="form-control " style="width: 300px;"  placeholder="请输入属性名称">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">属性值: </span>
+    <input type="text" name="department_desc" class="form-control" placeholder="请输入属性值...">
+  </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-info" data-dismiss="modal">返回</button>
+  <input type="submit"  class="btn btn-primary" name="department_tj" value="提交">
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+$("[data_action]").click(function(){
+   let action = this.getAttribute("data_action");
+    if (action === "edit"){
+      $("#action").modal('show');
+     }else if(action === "add_attr"){
+      $("#action").modal('show');
+     }
+})
+</script>
 {%endblock%}

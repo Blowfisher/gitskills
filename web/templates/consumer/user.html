@@ -20,7 +20,7 @@
       <tbody>
         <tr style="height:20px;">
 	<td class="text-center bg-success" style="width:30px;">
-	<a href="#" id="department_refresh" style="width:50px;line-height: 30px;">
+	<a href="javascript:;" id="department_refresh" style="width:50px;line-height: 30px;">
 	<span class="glyphicon glyphicon-refresh"></span>
 	</a>
 	</td>
@@ -69,10 +69,10 @@
       <button  type="button" class="btn-xs btn btn-warning dropdown-toggle" data-toggle='dropdown' data_check_box="{{user.id}}">操作 <span class="caret"></span>
       </button>
        <ul class="dropdown-menu">
-       <li data_action='edit'><a href="#"><span class="glyphicon glyphicon-edit" ></span> 编辑</a></li>
-       <li data_action='reset-pwd'><a href="#"><span class="glyphicon glyphicon-repeat"></span> 重置密码</a></li>
-       <li data_action='lock'><a href="#"><span class="glyphicon glyphicon-lock"></span> 锁定</a></li>
-       <li class='disabled' data_action='unlock'><a href="#"><span class="glyphicon glyphicon-briefcase"></span> 解锁</a></li>
+       <li data_action='edit'><a href="javascript:;"><span class="glyphicon glyphicon-edit" ></span> 编辑</a></li>
+       <li data_action='reset_pwd'><a href="javascript:;"><span class="glyphicon glyphicon-repeat"></span> 重置密码</a></li>
+       <li data_action='lock'><a href="javascript:;"><span class="glyphicon glyphicon-lock"></span> 锁定</a></li>
+       <li class='disabled' data_action='unlock'><a href="javascript:;"><span class="glyphicon glyphicon-briefcase"></span> 解锁</a></li>
       </ul>
      </div>
    {%endif%}
@@ -93,12 +93,12 @@
 <li ><a href="#">下一页 </a></li>
 </ul>	 	
 
-<div class="modal fade" id="user_add">
+<div class="modal fade " id="user_add">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal">&times;</button>
-<h5 class="modal-title" id="department_addlable"><span class="label label-primary"> 添加用户账号</span></h5>
+<h3 class="modal-title" id="department_addlable"><span class="label label-primary"> 添加用户账号</span></h3>
 </div>
 <div class="modal-body">
 <div id="user_info_add">
@@ -123,7 +123,7 @@
 	<span >英文字符和数字,最大6个字符</span>
 	</div>
 	<div class="form-group form-group-sm has-success" >
-	<label  >&nbsp;&nbsp;&nbsp;&nbsp;描述:</label>
+	<label  >&nbsp;&nbsp;&nbsp;&nbsp;姓名:</label>
 	<input type="text" name="desc"  placeholder="账号描述信息...">
 	</div>
 	<div class="form-group form-group-sm" >
@@ -142,15 +142,88 @@
   </div>
  </div>
 </div>
+
+
+
+<div class="modal fade" id="repwd" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                <h3 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-user"> </span>: 用户名</h3>
+            </div>
+            <div class="modal-body">
+              <br/>
+              <div class="input-group">
+              <span class="input-group-addon">新密码 ：</span>
+              <input type="password" class="form-control" style="width:320px;" >
+              <br/>
+             </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交更改</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+<div class="modal fade " id="user_change">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<h3 class="modal-title" id="department_addlable"><span class="label label-primary"> 编辑用户</span></h3>
+</div>
+<div class="modal-body">
+<div id="user_info_edit">
+ <label><span class="glyphicon glyphicon-star-empty"></span> 角色:</label>
+ <div class="dropdown" style="display: inline-block;">
+ <button type="button" class="btn btn-xs dropdown-toggle" data-toggle='dropdown'>选择角色 
+ <span class="caret"></span>
+</button>
+ <ul class="dropdown-menu">
+        {%for roler in role%}
+	<li><a href="javascript:;" data_selector="{{roler.id}}">
+	<span class="glyphicon glyphicon-user"></span>{{roler.desc}}</a>
+	</li>
+        {%endfor%}
+</ul>
+	</div>
+	</div>
+        <br>
+	<div class="form-group form-group-sm has-info" >
+	<label  ><span class="glyphicon glyphicon-star-empty"></span> 账号:</label>
+	<input type="text" name="username"  placeholder="用户账号登录名">
+	<span >英文字符和数字,最大6个字符</span>
+	</div>
+	<div class="form-group form-group-sm has-success" >
+	<label  >&nbsp;&nbsp;&nbsp;&nbsp;姓名:</label>
+	<input type="text" name="desc"  placeholder="账号描述信息...">
+	</div>
+	</div>
+	<div class="modal-footer">
+	<button type="button" class="btn btn-info" data-dismiss="modal">返回</button>
+	<input type="submit"  class="btn btn-primary" id='user_edit_btn'"  value="提交">
+   </div>
+  </div>
+ </div>
+</div>
+
+
+
 <script>
 $("[data_selector]").parent().click(function(){
-     var btn = $("[data_selector]").parent().parent().prev();
+     let btn = $("[data_selector]").parent().parent().prev();
      btn.html(this.innerText+'<span class="caret"></span>');
      role_id = this.children[0].getAttribute("data_selector");
      btn.attr("checkinfo",role_id);
 });
 
 
+// 用户添加
 $("#user_add_btn").click(function(){
 	urole = $("[data_selector]").parent().parent().prev().attr("checkinfo");
 	uname = $("[name='username']").prop("value");
@@ -181,6 +254,7 @@ $("#user_add_btn").click(function(){
 	                                        $("[name='desc']").prop("value","");
                                         	$("[name='pwd1']").prop("value","");
                                                	$("[name='pwd2']").prop("value","");
+                                                $("#user_add").modal("hide");
 					});
 					
 				}else{ console.log("用户角色选择失败")}
@@ -190,7 +264,7 @@ $("#user_add_btn").click(function(){
 }else{ console.log("请完成必填项.")}})
 
 
-
+// 用户删除
 $("#del_btn").click(function(){
 	var b = $("[data_check_box]").filter("input[type='checkbox']");
 	var uidlist = [];
@@ -212,7 +286,11 @@ $("#del_btn").click(function(){
 			data: {"uid": uidlist},
 		})
 		.done(function() {
-			console.log("success");
+		    for(let i of b){
+		        if (i.checked){
+		            $(i).remove();
+		        }
+                    }	
 		})
 		.fail(function() {
 			console.log("error");
@@ -226,6 +304,71 @@ $("#del_btn").click(function(){
 	}
 });
 
+
+	if (result){
+		$.ajax({
+			url: '/path/to/file',
+			type: 'POST',
+			dataType: 'json',
+			data: {"uid": uidlist},
+		})
+		.done(function() {
+		    for(let i of b){
+		        if (i.checked){
+		            $(i).remove();
+		        }
+                    }	
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	}else{
+		uidlist = [];
+	}
+
+// 用户编辑
+$("[data_action]").click(function(){
+    let uid = this.parentNode.previousElementSibling.getAttribute("data_check_box"),
+        loginor = $(this).parent().parent().parent().parent().children().first().next(),
+        loginname = loginor.text(),
+        descname = loginor.next().text(),
+        rolename = loginor.next().next().children().text(),
+        action = this.getAttribute("data_action");
+
+    if (action === "edit"){
+        if (rolename === "系统管理员"){
+            $("#user_info_edit").children("div").children("button").attr("checkinfo",1);
+            $("#user_info_edit").children("div").children("button").html(rolename+"<span class='caret'></span>");
+        }else if (rolename === "部门管理员"){
+            $("#user_info_edit").children("div").children("button").attr("checkinfo",2);
+            $("#user_info_edit").children("div").children("button").html(rolename+"<span class='caret'></span>");
+        }else if (rolename === "用户"){
+            $("#user_info_edit").children("div").children("button").attr("checkinfo",3);
+            $("#user_info_edit").children("div").children("button").html(rolename+"<span class='caret'></span>");
+        };
+        $("#user_info_edit").next().next().children("input").prop("value",loginname);
+        $("#user_info_edit").siblings().last().children().last().prop("value",descname);
+        $("#user_change").modal('show');
+    }else if(action == "reset_pwd"){
+        $("#repwd").find("input").prop("value","");
+        $("#repwd").modal('show');
+    }else if (action === "lock"){
+        let result = confirm("是否禁用 ?");
+        if (result){
+            console.log("locked.");
+        }
+    }else if (action === "unlock"){
+        let result = confirm("是否解禁 ?");
+        console.log("unlocked.");
+    }
+});
+
+//刷新列表
+$("#department_refresh")
 
 </script>
 {%endblock%}
