@@ -73,16 +73,18 @@
 }
 
 .dashboard_form{
+  margin-right:80px;
+  margin-bottom: 20px;
   display: inline-block;
-  width: 600px;
+  width: 780px;
   height: 350px;
-  background-color: green;
+  border: 1px solid #ddd;
 }
 
 .dashboard_img{
   text-align: center;
   height: 320px;
-  width: 600px;
+  width: 750px;
 }
 
 

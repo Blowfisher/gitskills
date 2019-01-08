@@ -5,6 +5,7 @@ import sys,os
 import logging
 import argparse
 
+logger = logging.getLogger('django')
 
 """此模块需要完整路径 """
 
@@ -23,8 +24,10 @@ def Dcreater(pathame):
 	    else:
 		try:
 		    os.makedirs(dirtmp)
+                    logger.info(dirtmp +' was created.')
 		except Exception as e:
-		    return e
+                    logger.error(e)
+		    return 
 
 def Dcreaters(args):
     """各路径需要写绝对路径"""
@@ -48,14 +51,20 @@ def Down(pathname,username,groupname):
     odata = Popen(ocmd,stdout=PIPE,stderr=PIPE,shell=True)
     error = odata.stderr.read()
     if error:
-        print(error)
+        logger.error(error)
+        return 
+    else:
+        logger.info(pathname+' \' OWN changed.')
 
 def Dtmp(pathname):
     tcmd = """chmod ugo+rwtx %s"""%pathname
     tdata = Popen(tcmd,stdout=PIPE,stderr=PIPE,shell=True)
     error = tdata.stderr.read()
     if error:
-        print(error)
+        logger.error(error)
+        return
+    else:
+        logger.info('Shared '+pathname+'was created.')
 
 
 

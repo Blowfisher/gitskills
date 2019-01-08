@@ -6,75 +6,135 @@ import logging
 from subprocess import Popen,PIPE
 import argparse
 
+logger = logging.getLogger('django')
 
 
-
-    
-def admin_add(username):
-    acmd = """useradd -M -s /sbin/nologin %s"""%username
-    adata = Popen(acmd,stdout=PIPE,stderr=PIPE,shell=True)
-    error = adata.stderr.read()
-    if error:
-        print(error)
-    return
-
-def com_add(username,group):
-    ccmd = """useradd -M -s /sbin/nologin -G %s %s"""%(group,username)
-    cdata = Popen(ccmd,stdout=PIPE,stderr=PIPE,shell=True)
-    error = cdata.stderr.read()
-    if error:
-        print(error)
-    return
-
-def user_del(username):
-    dcmd = """userdel -r %s"""%username
+def dpt_add(dptname):
+    dcmd = """groupadd %s;if [ $? -ne 0 ];then echo 1 >&2;fi"""%dptname
     ddata = Popen(dcmd,stdout=PIPE,stderr=PIPE,shell=True)
     error = ddata.stderr.read()
     if error:
-        print(error)
-    return
+        logger.error(error)
+        return
+    else:
+        logger.warning('Department :'+dptname+'was added.')
+        return
+
+def dpt_del(dptname):
+    dcmd = """groupdel %s;if [ $? -ne 0 ];then echo 1 >&2;fi"""%dptname
+    ddata = Popen(dcmd,stdout=PIPE,stderr=PIPE,shell=True)
+    error = ddata.stderr.read()
+    if error:
+        logger.error(error)
+        return
+    else:
+        logger.warning('Department :'+dptname+'was deleted.')
+        return   
+ 
+def admin_add(username):
+    acmd = """useradd -M -s /sbin/nologin %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%username
+    adata = Popen(acmd,stdout=PIPE,stderr=PIPE,shell=True)
+    error = adata.stderr.read()
+    if error:
+        logger.error(error)
+        return
+    else:
+        logger.info('User was created.')
+        return   
+
+def com_add(username,group):
+    ccmd = """useradd -M -s /sbin/nologin -G %s %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%(group,username)
+    cdata = Popen(ccmd,stdout=PIPE,stderr=PIPE,shell=True)
+    error = cdata.stderr.read()
+    if error:
+        logger.error(error)
+        return
+    else:
+        logger.info('User was created.')
+        return   
+
+def user_del(username):
+    dcmd = """userdel -r %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%username
+    ddata = Popen(dcmd,stdout=PIPE,stderr=PIPE,shell=True)
+    error = ddata.stderr.read()
+    if error:
+        logger.error(error)
+        return
+    else:
+        logger.warning('User was deleted.')
+        return   
+
+def cgroup(username,args):
+    data = args
+    for i in data:
+        group += str(i)+','
+    group = group.strip(',')
+    cgcmd = """usermod -G %s %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%(group,username)
+    cgdata = Popen(cgcmd,stdout=PIPE,stderr=PIPE,shell=True)
+    error = cgdata.stderr.read()
+    if error:
+        logger.error(error)
+        return
+    else:
+        logger.warning('Group was changed.')
+        return   
+    
 
 def user_mod(username,pwd=None,login_name=None,group=None,lock=None,unlock=None):
     def cpwd(username,pwd):
-        pcmd = """usermod -p %s %s"""%(pwd,username)
+        pcmd = """usermod -p %s %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%(pwd,username)
         pdata = Popen(pcmd,stdout=PIPE,stderr=PIPE,shell=True)
         error = pdata.stderr.read()
         if error:
-            print(error)
-        return 
+            logger.error(error)
+            return
+        else:
+            logger.warning(username + ' password was changed.')
+            return   
 
     def cname(username,login_name):
-        cncmd = """usermod -l %s %s"""%(login_name,username)
+        cncmd = """usermod -l %s %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%(login_name,username)
         cndata = Popen(cncmd,stdout=PIPE,stderr=PIPE,shell=True)
         error = cndata.stderr.read()
         if error:
-            print(error)
-        return 
+            logger.error(error)
+            return
+        else:
+            logger.warning(username + 'name was changed.')
+            return   
 
     def cgroup(username,group):
-        cgcmd = """usermod -g %s %s"""%(group,username)
+        cgcmd = """usermod -g %s %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%(group,username)
         cgdata = Popen(cgcmd,stdout=PIPE,stderr=PIPE,shell=True)
         error = cgdata.stderr.read()
         if error:
-            print(error)
-        print(cgdata.stdout.read())
-        return 
+            logger.error(error)
+            return
+        else:
+            logger.warning('Group was changed.')
+            return   
    
     def locker(username):
-        lcmd = """usermod -L %s"""%username
+        lcmd = """usermod -L %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%username
         ldata = Popen(lcmd,stdout=PIPE,stderr=PIPE,shell=True)
         error = ldata.stderr.read()
         if error:
-            print(error)
-        return 
+            logger.error(error)
+            return
+        else:
+            logger.warning(username + ' was locked.')
+            return   
    
     def ulocker(username):
-        ulcmd = """usermod -U %s"""%username
+        ulcmd = """usermod -U %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%username
         uldata = Popen(ulcmd,stdout=PIPE,stderr=PIPE,shell=True)
         error = uldata.stderr.read()
         if error:
-            print(error)
-        return 
+            logger.error(error)
+            return
+        else:
+            logger.warning(username + ' was unlocked.')
+            return   
     if pwd:
         cpwd(username,pwd)
     if login_name:

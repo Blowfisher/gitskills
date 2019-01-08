@@ -20,14 +20,13 @@
 		<a href="#"><img src="/static/img/user.png" class="img-circle"></a>
 		</div>
 		<div class="user_proper">
-		<a href="#"><span class="glyphicon glyphicon-user"></span> : pengkangqian</a>
+		<a href="#"><span class="glyphicon glyphicon-user"></span> : admin</a>
 		</div>
 	</div>
 	<div class="menu_list ">
-		<ul class="nav nav-tabs nav-stacked text-center">
-			<li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> 概览 </a> </li>
-			<li><a href="/browse"><span class="glyphicon glyphicon-globe"></span> 文件浏览</a></li>
-			<li><a href="/consumer"><span class="glyphicon glyphicon-user"></span> 用户</a></li>
+		<ul class="nav nav-tabs nav-stacked text-center" id="menu_list">
+			<li class=""><a href="/"><span class="glyphicon glyphicon-home"></span> 概览 </a> </li>
+			<li><a href="/consumer"><span class="glyphicon glyphicon-user"></span> Samba用户</a></li>
 			<li><a href="/department"><span class="glyphicon glyphicon-magnet"></span> 部门</a></li>
 			<li><a href="/deploy"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
 			<li><a href="/guider"><span class="glyphicon glyphicon-wrench"></span> 设置向导</a></li>
@@ -43,6 +42,22 @@
 		</ol>
 	</div>
 {% endblock %}
+<script>
+$(function(events){
+    $('#selector_btn').click(function() {
+        let a = $("[data_row_id]").children().children("[type='checkbox']");
+	$("#selector_btn").attr("select_all") === "true" ? ( a.prop("checked",false),$("#selector_btn").attr("select_all",false),$("#selector_btn").text("全选")):(a.prop("checked",true),$("#selector_btn").attr("select_all",true),$("#selector_btn").text("全不选"));   
+	});
+    var  pathstr = location.origin + location.pathname.replace(/\/$/,'');
+    for (let i of $("#menu_list").children().children()){
+        if (i.href.replace(/\/$/,'') === pathstr){
+            i.parentNode.setAttribute("class","active");
+        }
+    }; 
+
+
+})
+</script>
 </div>
 </body>
 </html>

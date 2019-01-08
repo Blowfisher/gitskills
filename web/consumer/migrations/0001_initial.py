@@ -11,16 +11,18 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Sa_group',
+            name='Sa_dpt',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('groupname', models.CharField(max_length=20)),
-                ('groupath', models.CharField(max_length=32)),
+                ('dptname', models.CharField(max_length=64)),
                 ('desc', models.CharField(max_length=255)),
-                ('state', models.BooleanField(default=True)),
+                ('stat', models.BooleanField(default=True)),
                 ('creator_time', models.DateTimeField(auto_now=True)),
-                ('group_locked', models.BooleanField(default=False)),
+                ('dpt_locked', models.BooleanField(default=False)),
             ],
+            options={
+                'db_table': 'sa_dpt',
+            },
         ),
         migrations.CreateModel(
             name='Sa_role',
@@ -30,20 +32,25 @@ class Migration(migrations.Migration):
                 ('desc', models.CharField(max_length=255)),
                 ('stat', models.BooleanField(default=True)),
             ],
+            options={
+                'db_table': 'sa_role',
+            },
         ),
         migrations.CreateModel(
             name='Sa_user',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('username', models.CharField(max_length=20)),
-                ('desc', models.CharField(max_length=20)),
+                ('username', models.CharField(max_length=64)),
+                ('desc', models.CharField(max_length=64)),
                 ('userpwd', models.CharField(max_length=255)),
                 ('user_locked', models.BooleanField(default=False)),
                 ('stat', models.BooleanField(default=True)),
                 ('login_ip', models.CharField(max_length=32)),
                 ('last_login', models.DateTimeField(auto_now=True)),
-                ('role_id', models.ForeignKey(to='consumer.Sa_role')),
-                ('user_group', models.ForeignKey(to='consumer.Sa_group')),
+                ('user_role', models.IntegerField(default=b'3')),
             ],
+            options={
+                'db_table': 'sa_user',
+            },
         ),
     ]
