@@ -54,9 +54,26 @@ $(function(events){
             i.parentNode.setAttribute("class","active");
         }
     }; 
+    
+});
 
 
-})
+//定义ajax处理函数
+function ajax_post(path,tmp_data,function1){
+		$.ajax({
+			url: path,
+			type: 'POST',
+			dataType: 'json',
+			data: tmp_data,
+		})
+		.done(function1)
+		.fail(function() {
+			alert("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+};
 </script>
 </div>
 </body>

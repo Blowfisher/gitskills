@@ -1021,3 +1021,144 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2019-01-07 20:24:22,648 INFO  Kname: samba_conf was get. 
 2019-01-07 20:24:53,154 INFO  /deploy/ 
 2019-01-07 22:15:14,483 INFO  /deploy/ 
+2019-01-08 22:39:36,554 INFO  Kname: samba_conf was get. 
+2019-01-08 22:39:36,581 INFO  Kname: samba_conf was get. 
+2019-01-08 22:39:36,584 INFO  Kname: samba_conf was get. 
+2019-01-08 22:40:11,439 INFO  /deploy/ 
+2019-01-09 21:20:36,079 INFO  Kname: samba_conf was get. 
+2019-01-09 21:20:36,080 INFO  Kname: samba_conf was get. 
+2019-01-09 21:20:36,081 INFO  Kname: samba_conf was get. 
+2019-01-09 21:23:49,144 INFO  /deploy/ 
+2019-01-09 21:24:44,195 INFO  /deploy/ 
+2019-01-09 21:25:06,930 INFO  /deploy/ 
+2019-01-09 21:26:41,551 INFO  /deploy/ 
+2019-01-09 22:18:10,122 WARNING  Not Found: /dashboard 
+2019-01-09 22:18:20,973 WARNING  Not Found: /dashboard 
+2019-01-09 22:19:41,799 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:19:48,169 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:23:54,746 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:31:44,413 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:36:29,774 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:37:31,611 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:40:39,181 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:40:41,614 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:40:48,818 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:40:50,255 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:42:31,787 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:47:57,870 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:50:26,322 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:55:30,586 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:56:04,267 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:56:19,666 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:04:08,906 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:04:15,169 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:04:21,847 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:06:47,545 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:25:25,615 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:31:25,951 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:32:46,119 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:33:04,713 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:44:50,278 WARNING  Not Found: /UserInfo/NewRegister 
+2019-01-09 23:52:41,144 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:52:47,981 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:52:59,287 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:53:03,544 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:53:09,506 INFO  /deploy/ 
+2019-01-11 22:23:47,967 INFO  Kname: samba_conf was get. 
+2019-01-11 22:23:47,968 INFO  Kname: samba_conf was get. 
+2019-01-11 22:23:47,969 INFO  Kname: samba_conf was get. 
+2019-01-11 22:24:00,403 WARNING  Not Found: /apple-touch-icon-precomposed.png 
+2019-01-11 22:24:05,955 WARNING  Not Found: /apple-touch-icon.png 
+2019-01-11 22:24:06,913 WARNING  Not Found: /apple-touch-icon-precomposed.png 
+2019-01-11 22:24:12,185 WARNING  Not Found: /apple-touch-icon.png 
+2019-01-11 22:24:20,721 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 22:25:13,010 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 22:29:34,814 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 22:29:43,291 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 22:36:11,462 WARNING  Not Found: /public/index.php 
+2019-01-11 22:36:15,136 WARNING  Not Found: /public/index.php 
+2019-01-11 22:36:18,763 WARNING  Not Found: /public/index.php 
+2019-01-11 22:52:42,056 WARNING  Not Found: /index.php 
+2019-01-11 23:43:37,578 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 23:48:05,209 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 09:11:25,689 INFO  Kname: samba_conf was get. 
+2019-01-12 09:11:25,690 INFO  Kname: samba_conf was get. 
+2019-01-12 09:11:25,691 INFO  Kname: samba_conf was get. 
+2019-01-12 09:11:37,724 WARNING  Not Found: /favicon.ico 
+2019-01-12 09:19:27,961 INFO  Kname: samba_conf was get. 
+2019-01-12 09:19:27,963 INFO  Kname: samba_conf was get. 
+2019-01-12 09:19:27,964 INFO  Kname: samba_conf was get. 
+2019-01-12 09:19:31,086 INFO  /deploy/ 
+2019-01-12 09:24:09,946 WARNING  Not Found: /getuser/path/file 
+2019-01-12 09:25:49,706 WARNING  Not Found: /getuser/path/file 
+2019-01-12 09:40:16,827 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:17:02,874 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:22:20,852 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:22:43,879 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:24:20,795 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:24:20,808 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:25:18,262 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:34:36,205 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:35:15,680 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:38:05,238 INFO  /deploy/ 
+2019-01-12 10:39:34,844 INFO  /deploy/ 
+2019-01-12 10:40:53,032 INFO  /deploy/ 
+2019-01-12 10:41:13,527 INFO  /deploy/ 
+2019-01-12 10:41:29,723 INFO  /deploy/ 
+2019-01-12 10:44:01,579 INFO  /deploy/ 
+2019-01-12 10:44:10,490 WARNING  Not Found: /path/to/file 
+2019-01-12 10:51:47,284 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101:8081/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-01-12 11:32:54,829 WARNING  Not Found: /http:/www.baidu.com/cache/global/img/gs.gif 
+2019-01-12 11:43:58,663 WARNING  Not Found: /HNAP1/ 
+2019-01-12 12:25:18,326 INFO  Kname: samba_conf was get. 
+2019-01-12 12:25:18,327 INFO  Kname: samba_conf was get. 
+2019-01-12 12:25:18,328 INFO  Kname: samba_conf was get. 
+2019-01-12 12:30:41,163 INFO  /deploy/ 
+2019-01-12 12:47:22,447 ERROR  Internal Server Error: /consumer/ 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 24, in consumer
+    return JsonResponse(json.dumps({"users":user,"dpment":dpment,"role":role}))
+  File "/usr/lib64/python2.7/json/__init__.py", line 243, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/lib64/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [{'stat': True, 'role_name': u'admin', u'id': 1, 'desc': u'\u7cfb\u7edf\u7ba1\u7406\u5458'}, {'stat': True, 'role_name': u'manager', u'id': 2, 'desc': u'\u90e8\u95e8\u7ba1\u7406\u5458'}, {'stat': True, 'role_name': u'user', u'id': 3, 'desc': u'\u7528\u6237'}] is not JSON serializable
+2019-01-12 12:51:07,318 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 13:38:57,992 INFO  Kname: samba_conf was get. 
+2019-01-12 13:38:57,993 INFO  Kname: samba_conf was get. 
+2019-01-12 13:38:57,993 INFO  Kname: samba_conf was get. 
+2019-01-12 14:07:12,495 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101:8081/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-01-12 14:17:36,458 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101:8081/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-01-12 14:38:39,473 INFO  Kname: samba_conf was get. 
+2019-01-12 14:38:39,474 INFO  Kname: samba_conf was get. 
+2019-01-12 14:38:39,475 INFO  Kname: samba_conf was get. 
+2019-01-12 14:38:56,448 WARNING  Not Found: /path/to/file 
+2019-01-12 14:39:55,876 WARNING  Not Found: /path/to/file 
+2019-01-12 14:40:25,571 WARNING  Not Found: /path/to/file 
+2019-01-12 14:46:24,352 WARNING  Not Found: /path/to/file 
+2019-01-12 14:48:25,336 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 15:12:59,489 WARNING  Not Found: /consumer/user_delete 

@@ -77,11 +77,11 @@
 <div class="modal-content">
 <div class="modal-header">
    <button type="button" class="close" data-dismiss="modal">&times;</button>
-   <h3 class="modal-title" id="department_addlable"><span class="label label-primary"> 添加部门</label></h3>
+   <h3 class="modal-title" id="department_lable"><span class="label label-primary"> 添加部门</label></h3>
 </div>
 <div class="modal-body">
    <form>
-    <p><span class="glyphicon glyphicon-exclamation-sign text-primary"></span> 英文字母最多20个，汉字最多6个</p>
+    <p><span class="glyphicon glyphicon-exclamation-sign text-primary"></span>部门名称唯一</p>
     <div class="input-group">
     <span class="input-group-addon ">部门: </span>
     <input type="text" name="department" class="form-control " style="width: 300px;"  placeholder="请输入部门名称">
@@ -101,6 +101,33 @@
 </div>
 
 
+<div class="modal fade" id="department_edit">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal">&times;</button>
+   <h3 class="modal-title" id="department_edit_lable"><span class="label label-primary"> 添加部门</label></h3>
+</div>
+<div class="modal-body">
+   <form>
+    <p><span class="glyphicon glyphicon-exclamation-sign text-primary"></span>部门名称唯一</p>
+    <div class="input-group">
+    <span class="input-group-addon ">部门: </span>
+    <input type="text" name="department_edit" class="form-control " style="width: 300px;"  placeholder="请输入部门名称">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">描述: </span>
+    <input type="text" name="department_edit_desc" class="form-control" placeholder="请输入简要描述信息...">
+  </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-info" data-dismiss="modal">返回</button>
+  <input type="submit"  class="btn btn-primary" name="department_edit_tj" value="提交">
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -119,31 +146,18 @@ $("#dpart_lock").click(function(){
             alert("请选择需要禁用的部门！");
             return
         }
-	result = confirm("警告！ 此操作会导致文件不可用？")
-	if (result){
-		$.ajax({
-			url: '/path/to/file',
-			type: 'POST',
-			dataType: 'json',
-			data: {"uid": uidlist},
-		})
-		.done(function() {
-		    for(let i of b){
-		        if (i.checked){
-		            $(i).remove();
-		        }
-                    }	
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
-		
-	}else{
-		uidlist = [];
-	}
+	result = confirm("⚠️  此操作会导致文件不可用？")
+        if (result){
+        let path = "/";
+        let tmp_data = {"uid":uidlist};
+        ajax_post(path,tmp_data,function() {
+          for (let i of b){
+           if (i.checked){
+             $(i).remove();
+           }
+          }
+        }) 
+        }
 });
 
 
@@ -153,13 +167,55 @@ $("[data_action]").click(function(){
    let action = this.getAttribute("data_action")
    
    if (action === "edit"){
-     alert("edit")
+    let dp_desc = $(this).parent().parent().siblings().first().next().children().text();
+    let dpname2 = $(this).parent().parent().siblings().first().next().text().split(' ')[0];
+    let getuser = "/getuser/path/file"
+    $('#department_edit_lable').children().text(dp_desc);
+    $("[name='department_edit']").prop('value',dpname2);
+    $("[name='department_edit_desc']").prop('value',dp_desc);
+    $("#department_edit").modal('show');
    }else if(action === "delete"){
-     alert("delete")
+     let result = confirm("⚠️  删除后文件无法恢复！");
+     if (result){
+        let path = "/";
+        let tmp_data = "1";
+        let function1 = console.log("");
+        ajax_post(path,tmp_data,function1);
+     }
    }
 }
-)
+);
+$("input[name ='department_edit_tj']").click(function(){
+  let dpname = $("input[name = 'department_edit']").prop("value");
+  let dp_desc = $("input[name = 'department_edit_desc']").prop("value");
+  let path = "/";
+  let tmp_data = {"dpname":dpname,"dp_desc":dp_desc};
+  let function1 = console.log("");
+  if(dpname === ''){
+   alert('⚠️  部门名称不能为空!');
+   return
+  }else if(dp_desc === ''){
+   alert('⚠️  描述不能为空!');
+   return
+  };
+  ajax_post(path,tmp_data,function1);
+});
 
+$("input[name ='department_tj']").click(function(){
+  let dpname = $("input[name = 'department']").prop("value");
+  let dp_desc = $("input[name = 'department_desc']").prop("value");
+  let path = "/";
+  let tmp_data = {"dpname":dpname,"dp_desc":dp_desc};
+  let function1 = console.log("");
+  if(dpname === ''){
+   alert('⚠️  部门名称不能为空!');
+   return
+  }else if(dp_desc === ''){
+   alert('⚠️  描述不能为空!');
+   return
+  };
+  ajax_post(path,tmp_data,function1);
+});
 
 
 </script>
