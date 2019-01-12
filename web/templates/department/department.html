@@ -143,20 +143,14 @@ $("#dpart_lock").click(function(){
 		}
 	}
         if (uidlist.length === 0){
-            alert("请选择需要禁用的部门！");
+            alert("请选择需要禁用的组织！");
             return
         }
-	result = confirm("⚠️  此操作会导致文件不可用？")
+	result = confirm("⚠️  此操作会导致文件不可访问？")
         if (result){
-        let path = "/";
+        let path = "/department/lock_department";
         let tmp_data = {"uid":uidlist};
-        ajax_post(path,tmp_data,function() {
-          for (let i of b){
-           if (i.checked){
-             $(i).remove();
-           }
-          }
-        }) 
+        ajax_post(path,tmp_data,function1("/department")) ;
         }
 });
 
@@ -164,12 +158,10 @@ $("#dpart_lock").click(function(){
 
 
 $("[data_action]").click(function(){
-   let action = this.getAttribute("data_action")
-   
+   let action = this.getAttribute("data_action");
+   let dp_desc = $(this).parent().parent().siblings().first().next().children().text();
+   let dpname2 = $(this).parent().parent().siblings().first().next().text().split(' ')[0];
    if (action === "edit"){
-    let dp_desc = $(this).parent().parent().siblings().first().next().children().text();
-    let dpname2 = $(this).parent().parent().siblings().first().next().text().split(' ')[0];
-    let getuser = "/getuser/path/file"
     $('#department_edit_lable').children().text(dp_desc);
     $("[name='department_edit']").prop('value',dpname2);
     $("[name='department_edit_desc']").prop('value',dp_desc);
@@ -177,20 +169,18 @@ $("[data_action]").click(function(){
    }else if(action === "delete"){
      let result = confirm("⚠️  删除后文件无法恢复！");
      if (result){
-        let path = "/";
-        let tmp_data = "1";
-        let function1 = console.log("");
-        ajax_post(path,tmp_data,function1);
+        let path = "/department/delete_department";
+        let tmp_data = {"dpname":dpname2};
+        ajax_post(path,tmp_data,function1("/department"));
      }
    }
-}
-);
+});
+
 $("input[name ='department_edit_tj']").click(function(){
   let dpname = $("input[name = 'department_edit']").prop("value");
   let dp_desc = $("input[name = 'department_edit_desc']").prop("value");
-  let path = "/";
+  let path = "/department/edit_department";
   let tmp_data = {"dpname":dpname,"dp_desc":dp_desc};
-  let function1 = console.log("");
   if(dpname === ''){
    alert('⚠️  部门名称不能为空!');
    return
@@ -198,7 +188,7 @@ $("input[name ='department_edit_tj']").click(function(){
    alert('⚠️  描述不能为空!');
    return
   };
-  ajax_post(path,tmp_data,function1);
+  ajax_post(path,tmp_data,function1("/department"));
 });
 
 $("input[name ='department_tj']").click(function(){
@@ -206,7 +196,6 @@ $("input[name ='department_tj']").click(function(){
   let dp_desc = $("input[name = 'department_desc']").prop("value");
   let path = "/";
   let tmp_data = {"dpname":dpname,"dp_desc":dp_desc};
-  let function1 = console.log("");
   if(dpname === ''){
    alert('⚠️  部门名称不能为空!');
    return
@@ -214,9 +203,13 @@ $("input[name ='department_tj']").click(function(){
    alert('⚠️  描述不能为空!');
    return
   };
-  ajax_post(path,tmp_data,function1);
+  ajax_post(path,tmp_data,function1("/department"));
 });
 
+//刷新列表
+$("#department_refresh").click(function(){
+  location.assign("/department");
+});
 
 </script>
 {%endblock%}

@@ -27,7 +27,7 @@
 		<ul class="nav nav-tabs nav-stacked text-center" id="menu_list">
 			<li class=""><a href="/"><span class="glyphicon glyphicon-home"></span> 概览 </a> </li>
 			<li><a href="/consumer"><span class="glyphicon glyphicon-user"></span> Samba用户</a></li>
-			<li><a href="/department"><span class="glyphicon glyphicon-magnet"></span> 部门</a></li>
+			<li><a href="/department"><span class="glyphicon glyphicon-magnet"></span> 组织</a></li>
 			<li><a href="/deploy"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
 			<li><a href="/guider"><span class="glyphicon glyphicon-wrench"></span> 设置向导</a></li>
 		</ul>
@@ -59,21 +59,30 @@ $(function(events){
 
 
 //定义ajax处理函数
-function ajax_post(path,tmp_data,function1){
+function ajax_post(path,tmp_data,func1){
 		$.ajax({
 			url: path,
 			type: 'POST',
 			dataType: 'json',
 			data: tmp_data,
 		})
-		.done(function1)
+		.success(func1)
 		.fail(function() {
-			alert("error");
+			alert("⚠️  未知异常！请检查程序是否运行 网络是否正常！");
 		})
 		.always(function() {
 			console.log("complete");
 		});
 };
+/* function ajax_post(path,tmp_data,success){
+   $.post(path,tmp_data,suscess);
+}; */
+
+function function1(path){
+  location.assign(path);
+//    console.log(location.pathname)
+};
+
 </script>
 </div>
 </body>

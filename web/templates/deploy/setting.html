@@ -16,7 +16,7 @@
 <ul class="nav nav-tabs">
 {%for section_name in section %}
    {%if forloop.first %}
-<li class="active"><a data-toggle="tab" href="#{{section_name}}">{{section_name}}</a></li>
+<li class="active" id="dp_active"><a data-toggle="tab" href="#{{section_name}}">{{section_name}}</a></li>
     {%else%}
 <li><a data-toggle="tab" href="#{{section_name}}">{{section_name}}</a></li>
    {%endif%}
@@ -70,7 +70,7 @@
 <div class="modal-content">
 <div class="modal-header">
    <button type="button" class="close" data-dismiss="modal">&times;</button>
-   <h3 class="modal-title" id="department_addlable"><span class="label label-primary"> 配置属性</label></h3>
+   <h3 class="modal-title" id="department_attr"><span class="label label-primary"> 配置属性</label></h3>
 </div>
 <div class="modal-body">
    <form>
@@ -87,7 +87,7 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-info" data-dismiss="modal">返回</button>
-  <input type="submit"  class="btn btn-primary" name="department_tj" value="提交">
+  <input type="submit"  class="btn btn-primary" name="dp_attr_tj" value="提交">
 </div>
 </div>
 </div>
@@ -97,11 +97,36 @@
 <script>
 $("[data_action]").click(function(){
    let action = this.getAttribute("data_action");
+   let now_dpname = $("#dp_active").children().text();
+   $("#department_attr").children().text(now_dpname);
+      
     if (action === "edit"){
+      let sec_name = $(this).parent().siblings().first().text();
+      let desc_name = $(this).parent().prev().text();
+      $("input[name='department']").prop('value',sec_name);
+      $("input[name='department_desc']").prop('value',desc_name);
       $("#action").modal('show');
      }else if(action === "add_attr"){
       $("#action").modal('show');
+      $("input[name='department']").prop('value','');
+      $("input[name='department_desc']").prop('value','');
      }
-})
+});
+$("[name='dp_attr_tj']").click(function(){
+  let dpname = $("input[name='department']").prop('value'),
+      dp_desc = $("input[name='department_desc']").prop('value'),
+      tmp_data = {"dpname":dpname,"dp_desc":dp_desc},
+      path = '/deploy/set_deploy';
+  if (dpname === ''){
+    alert("⚠️  组织名称不能为空!");
+    return
+  }else if(dp_desc === ''){
+    alert("⚠️  组织描述不能为空!");
+    return
+  };
+   ajax_post(path,tmp_data,function1("/deploy"))
+});
+
+
 </script>
 {%endblock%}

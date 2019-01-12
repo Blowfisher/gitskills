@@ -1162,3 +1162,114 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2019-01-12 14:46:24,352 WARNING  Not Found: /path/to/file 
 2019-01-12 14:48:25,336 WARNING  Not Found: /consumer/user_delete 
 2019-01-12 15:12:59,489 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 15:40:50,623 INFO  /deploy/ 
+2019-01-12 15:40:53,975 INFO  /deploy/ 
+2019-01-12 15:49:02,141 INFO  /deploy/ 
+2019-01-12 15:49:04,940 INFO  /deploy/ 
+2019-01-12 15:49:50,400 WARNING  Not Found: /department/edit_department 
+2019-01-12 15:50:25,719 INFO  /deploy/ 
+2019-01-12 15:56:39,065 INFO  /deploy/ 
+2019-01-12 15:59:45,709 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 16:01:43,510 INFO  /deploy/ 
+2019-01-12 16:02:02,403 INFO  /deploy/ 
+2019-01-12 16:04:49,447 INFO  /deploy/ 
+2019-01-12 16:15:09,075 INFO  /deploy/ 
+2019-01-12 16:15:10,504 INFO  /deploy/ 
+2019-01-12 16:19:01,582 INFO  /deploy/ 
+2019-01-12 16:20:50,141 INFO  /deploy/ 
+2019-01-12 16:21:13,100 INFO  /deploy/ 
+2019-01-12 16:21:13,860 INFO  /deploy/ 
+2019-01-12 16:21:46,143 INFO  /deploy/ 
+2019-01-12 16:21:47,021 INFO  /deploy/ 
+2019-01-12 16:22:06,423 INFO  /deploy/ 
+2019-01-12 16:25:25,843 INFO  /deploy/ 
+2019-01-12 16:26:05,904 INFO  /deploy/ 
+2019-01-12 16:28:28,061 INFO  /deploy/ 
+2019-01-12 16:28:35,311 INFO  /deploy/ 
+2019-01-12 16:44:01,357 INFO  /deploy/ 
+2019-01-12 16:44:07,460 INFO  /deploy/ 
+2019-01-12 16:44:44,198 WARNING  Not Found: /department/lock_department 
+2019-01-12 16:44:55,001 WARNING  Not Found: /department/lock_department 
+2019-01-12 16:48:16,167 WARNING  Not Found: /department/delete_department 
+2019-01-12 16:48:21,162 WARNING  Not Found: /department/edit_department 
+2019-01-12 16:50:15,329 WARNING  Not Found: /department/lock_department 
+2019-01-12 16:50:55,156 INFO  /deploy/ 
+2019-01-12 16:51:24,905 WARNING  Not Found: /department/delete_department 
+2019-01-12 16:51:59,617 INFO  /deploy/ 
+2019-01-12 16:52:10,058 INFO  /deploy/ 
+2019-01-12 16:52:12,217 INFO  /deploy/ 
+2019-01-12 16:55:02,784 INFO  /deploy/ 
+2019-01-12 16:57:23,326 INFO  /deploy/ 
+2019-01-12 17:08:08,675 INFO  /deploy/ 
+2019-01-12 17:11:00,342 INFO  /deploy/ 
+2019-01-12 17:11:00,430 INFO  /deploy/ 
+2019-01-12 17:11:00,658 INFO  /deploy/ 
+2019-01-12 17:12:26,990 INFO  /deploy/ 
+2019-01-12 17:12:27,127 INFO  /deploy/ 
+2019-01-12 17:13:05,990 INFO  /deploy/ 
+2019-01-12 17:14:28,752 INFO  /deploy/ 
+2019-01-12 17:16:39,505 INFO  /deploy/ 
+2019-01-12 17:17:20,539 INFO  /deploy/ 
+2019-01-12 17:17:20,731 INFO  /deploy/ 
+2019-01-12 17:17:28,464 INFO  /deploy/ 
+2019-01-12 17:19:32,686 INFO  /deploy/ 
+2019-01-12 17:26:44,776 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:27:58,653 INFO  /deploy/ 
+2019-01-12 17:27:58,726 INFO  /deploy/ 
+2019-01-12 17:29:56,790 INFO  /deploy/ 
+2019-01-12 17:30:54,458 INFO  /deploy/ 
+2019-01-12 17:30:57,799 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:30:59,188 INFO  /deploy/ 
+2019-01-12 17:31:07,807 INFO  /deploy/ 
+2019-01-12 17:31:11,781 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:31:13,444 INFO  /deploy/ 
+2019-01-12 17:31:18,762 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:31:20,179 INFO  /deploy/ 
+2019-01-12 17:31:42,108 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:31:48,806 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:32:01,096 INFO  /deploy/ 
+2019-01-12 17:32:06,776 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:32:08,133 INFO  /deploy/ 
+2019-01-12 17:32:19,716 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:32:22,527 INFO  /deploy/ 
+2019-01-12 17:32:29,967 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:32:31,726 INFO  /deploy/ 
+2019-01-12 17:34:38,482 INFO  /deploy/ 
+2019-01-12 17:34:42,319 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:35:35,288 INFO  /deploy/ 
+2019-01-12 17:35:38,528 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:36:12,400 INFO  /deploy/ 
+2019-01-12 17:36:16,798 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:36:18,361 INFO  /deploy/ 
+2019-01-12 17:41:36,773 INFO  /deploy/ 
+2019-01-12 17:41:38,374 INFO  /deploy/ 
+2019-01-12 17:41:42,145 INFO  /deploy/ 
+2019-01-12 17:41:49,487 INFO  /deploy/ 
+2019-01-12 17:42:29,549 INFO  /deploy/ 
+2019-01-12 17:44:38,813 INFO  /deploy/ 
+2019-01-12 17:44:42,816 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:44:47,631 INFO  /deploy/ 
+2019-01-12 17:44:53,541 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:44:54,932 INFO  /deploy/ 
+2019-01-12 17:48:21,324 INFO  /deploy/ 
+2019-01-12 17:49:08,664 INFO  /deploy/ 
+2019-01-12 17:50:42,381 INFO  /deploy/ 
+2019-01-12 17:50:57,121 INFO  /deploy/ 
+2019-01-12 17:51:04,422 INFO  /deploy/ 
+2019-01-12 17:51:36,782 INFO  /deploy/ 
+2019-01-12 17:52:17,562 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:52:21,282 INFO  /deploy/ 
+2019-01-12 17:52:27,502 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:52:33,702 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:52:38,862 WARNING  Not Found: /department/lock_department 
+2019-01-12 17:57:30,305 INFO  /deploy/ 
+2019-01-12 17:57:30,426 INFO  /deploy/ 
+2019-01-12 17:58:09,254 INFO  /deploy/ 
+2019-01-12 17:58:12,603 INFO  /deploy/ 
+2019-01-12 17:59:48,370 INFO  /deploy/ 
+2019-01-12 18:00:17,015 INFO  /deploy/ 
+2019-01-12 18:02:02,094 WARNING  Not Found: /department/delete_department 
+2019-01-12 18:02:20,007 WARNING  Not Found: /department/lock_department 
+2019-01-12 18:02:36,645 WARNING  Not Found: /department/lock_department 
+2019-01-12 18:02:39,611 INFO  /deploy/ 
+2019-01-12 18:02:43,491 INFO  /deploy/ 

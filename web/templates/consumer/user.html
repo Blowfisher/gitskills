@@ -360,8 +360,7 @@ $("[data_action]").click(function(){
         $("#user_edit_btn").click(function(){
            let path = "/consumer/edit_user";
            let tmp_data = [loginname,descname,rolename];
-           let function1 = console.log("");
-           ajax_post(path,tmp_data,function1);
+           ajax_post(path,tmp_data,function1("/consumer"));
         })
     }else if(action == "reset_pwd"){
         $("#repwd").find("input").prop("value","");
@@ -370,12 +369,11 @@ $("[data_action]").click(function(){
         $("#rpwd_submit").click(function(){
             let path = '/';
             let tmp_data =  $("#new_pwd").prop("value");
-            let function1 = console.log("");
             if (tmp_data.length < 6){
               alert("密码长度不足.");
               return
             };
-            ajax_post(path,tmp_data,function1);
+            ajax_post(path,tmp_data,function1("/consumer"));
         })
     }else if (action === "lock"){
         let result = confirm("是否禁用 ?");
@@ -383,22 +381,22 @@ $("[data_action]").click(function(){
             console.log("locked.");
             let path = "/consumer/lock_user";
             let tmp_data = loginname;
-            let function1 = console.log("");
-            ajax_post(path,tmp_data,function1);
+            ajax_post(path,tmp_data,function1("/consumer"));
         }
     }else if (action === "unlock"){
         let result = confirm("是否解禁 ?");
         if (result){
             let path = "/consumer/unlock_user";
             let tmp_data = loginname;
-            let function1 = console.log("");
-            ajax_post(path,tmp_data,function1);
+            ajax_post(path,tmp_data,function1("/consumer"));
         }
     }
   });
 
 //刷新列表
-$("#department_refresh")
+$("#department_refresh").click(function(){
+  location.assign("/consumer");
+});
 
 </script>
 {%endblock%}
