@@ -1021,3 +1021,255 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2019-01-07 20:24:22,648 INFO  Kname: samba_conf was get. 
 2019-01-07 20:24:53,154 INFO  /deploy/ 
 2019-01-07 22:15:14,483 INFO  /deploy/ 
+2019-01-08 22:39:36,554 INFO  Kname: samba_conf was get. 
+2019-01-08 22:39:36,581 INFO  Kname: samba_conf was get. 
+2019-01-08 22:39:36,584 INFO  Kname: samba_conf was get. 
+2019-01-08 22:40:11,439 INFO  /deploy/ 
+2019-01-09 21:20:36,079 INFO  Kname: samba_conf was get. 
+2019-01-09 21:20:36,080 INFO  Kname: samba_conf was get. 
+2019-01-09 21:20:36,081 INFO  Kname: samba_conf was get. 
+2019-01-09 21:23:49,144 INFO  /deploy/ 
+2019-01-09 21:24:44,195 INFO  /deploy/ 
+2019-01-09 21:25:06,930 INFO  /deploy/ 
+2019-01-09 21:26:41,551 INFO  /deploy/ 
+2019-01-09 22:18:10,122 WARNING  Not Found: /dashboard 
+2019-01-09 22:18:20,973 WARNING  Not Found: /dashboard 
+2019-01-09 22:19:41,799 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:19:48,169 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:23:54,746 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:31:44,413 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:36:29,774 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:37:31,611 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:40:39,181 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:40:41,614 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:40:48,818 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:40:50,255 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:42:31,787 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:47:57,870 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:50:26,322 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:55:30,586 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:56:04,267 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 22:56:19,666 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:04:08,906 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:04:15,169 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:04:21,847 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:06:47,545 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:25:25,615 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:31:25,951 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:32:46,119 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:33:04,713 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:44:50,278 WARNING  Not Found: /UserInfo/NewRegister 
+2019-01-09 23:52:41,144 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:52:47,981 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:52:59,287 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:53:03,544 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-09 23:53:09,506 INFO  /deploy/ 
+2019-01-11 22:23:47,967 INFO  Kname: samba_conf was get. 
+2019-01-11 22:23:47,968 INFO  Kname: samba_conf was get. 
+2019-01-11 22:23:47,969 INFO  Kname: samba_conf was get. 
+2019-01-11 22:24:00,403 WARNING  Not Found: /apple-touch-icon-precomposed.png 
+2019-01-11 22:24:05,955 WARNING  Not Found: /apple-touch-icon.png 
+2019-01-11 22:24:06,913 WARNING  Not Found: /apple-touch-icon-precomposed.png 
+2019-01-11 22:24:12,185 WARNING  Not Found: /apple-touch-icon.png 
+2019-01-11 22:24:20,721 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 22:25:13,010 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 22:29:34,814 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 22:29:43,291 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 22:36:11,462 WARNING  Not Found: /public/index.php 
+2019-01-11 22:36:15,136 WARNING  Not Found: /public/index.php 
+2019-01-11 22:36:18,763 WARNING  Not Found: /public/index.php 
+2019-01-11 22:52:42,056 WARNING  Not Found: /index.php 
+2019-01-11 23:43:37,578 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-11 23:48:05,209 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 09:11:25,689 INFO  Kname: samba_conf was get. 
+2019-01-12 09:11:25,690 INFO  Kname: samba_conf was get. 
+2019-01-12 09:11:25,691 INFO  Kname: samba_conf was get. 
+2019-01-12 09:11:37,724 WARNING  Not Found: /favicon.ico 
+2019-01-12 09:19:27,961 INFO  Kname: samba_conf was get. 
+2019-01-12 09:19:27,963 INFO  Kname: samba_conf was get. 
+2019-01-12 09:19:27,964 INFO  Kname: samba_conf was get. 
+2019-01-12 09:19:31,086 INFO  /deploy/ 
+2019-01-12 09:24:09,946 WARNING  Not Found: /getuser/path/file 
+2019-01-12 09:25:49,706 WARNING  Not Found: /getuser/path/file 
+2019-01-12 09:40:16,827 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:17:02,874 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:22:20,852 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:22:43,879 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:24:20,795 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:24:20,808 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:25:18,262 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:34:36,205 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:35:15,680 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 10:38:05,238 INFO  /deploy/ 
+2019-01-12 10:39:34,844 INFO  /deploy/ 
+2019-01-12 10:40:53,032 INFO  /deploy/ 
+2019-01-12 10:41:13,527 INFO  /deploy/ 
+2019-01-12 10:41:29,723 INFO  /deploy/ 
+2019-01-12 10:44:01,579 INFO  /deploy/ 
+2019-01-12 10:44:10,490 WARNING  Not Found: /path/to/file 
+2019-01-12 10:51:47,284 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101:8081/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-01-12 11:32:54,829 WARNING  Not Found: /http:/www.baidu.com/cache/global/img/gs.gif 
+2019-01-12 11:43:58,663 WARNING  Not Found: /HNAP1/ 
+2019-01-12 12:25:18,326 INFO  Kname: samba_conf was get. 
+2019-01-12 12:25:18,327 INFO  Kname: samba_conf was get. 
+2019-01-12 12:25:18,328 INFO  Kname: samba_conf was get. 
+2019-01-12 12:30:41,163 INFO  /deploy/ 
+2019-01-12 12:47:22,447 ERROR  Internal Server Error: /consumer/ 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 24, in consumer
+    return JsonResponse(json.dumps({"users":user,"dpment":dpment,"role":role}))
+  File "/usr/lib64/python2.7/json/__init__.py", line 243, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/lib64/python2.7/json/encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python2.7/json/encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python2.7/json/encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [{'stat': True, 'role_name': u'admin', u'id': 1, 'desc': u'\u7cfb\u7edf\u7ba1\u7406\u5458'}, {'stat': True, 'role_name': u'manager', u'id': 2, 'desc': u'\u90e8\u95e8\u7ba1\u7406\u5458'}, {'stat': True, 'role_name': u'user', u'id': 3, 'desc': u'\u7528\u6237'}] is not JSON serializable
+2019-01-12 12:51:07,318 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 13:38:57,992 INFO  Kname: samba_conf was get. 
+2019-01-12 13:38:57,993 INFO  Kname: samba_conf was get. 
+2019-01-12 13:38:57,993 INFO  Kname: samba_conf was get. 
+2019-01-12 14:07:12,495 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101:8081/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-01-12 14:17:36,458 ERROR  Internal Server Error: /consumer 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.89.49.101:8081/consumer/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2019-01-12 14:38:39,473 INFO  Kname: samba_conf was get. 
+2019-01-12 14:38:39,474 INFO  Kname: samba_conf was get. 
+2019-01-12 14:38:39,475 INFO  Kname: samba_conf was get. 
+2019-01-12 14:38:56,448 WARNING  Not Found: /path/to/file 
+2019-01-12 14:39:55,876 WARNING  Not Found: /path/to/file 
+2019-01-12 14:40:25,571 WARNING  Not Found: /path/to/file 
+2019-01-12 14:46:24,352 WARNING  Not Found: /path/to/file 
+2019-01-12 14:48:25,336 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 15:12:59,489 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 15:40:50,623 INFO  /deploy/ 
+2019-01-12 15:40:53,975 INFO  /deploy/ 
+2019-01-12 15:49:02,141 INFO  /deploy/ 
+2019-01-12 15:49:04,940 INFO  /deploy/ 
+2019-01-12 15:49:50,400 WARNING  Not Found: /department/edit_department 
+2019-01-12 15:50:25,719 INFO  /deploy/ 
+2019-01-12 15:56:39,065 INFO  /deploy/ 
+2019-01-12 15:59:45,709 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 16:01:43,510 INFO  /deploy/ 
+2019-01-12 16:02:02,403 INFO  /deploy/ 
+2019-01-12 16:04:49,447 INFO  /deploy/ 
+2019-01-12 16:15:09,075 INFO  /deploy/ 
+2019-01-12 16:15:10,504 INFO  /deploy/ 
+2019-01-12 16:19:01,582 INFO  /deploy/ 
+2019-01-12 16:20:50,141 INFO  /deploy/ 
+2019-01-12 16:21:13,100 INFO  /deploy/ 
+2019-01-12 16:21:13,860 INFO  /deploy/ 
+2019-01-12 16:21:46,143 INFO  /deploy/ 
+2019-01-12 16:21:47,021 INFO  /deploy/ 
+2019-01-12 16:22:06,423 INFO  /deploy/ 
+2019-01-12 16:25:25,843 INFO  /deploy/ 
+2019-01-12 16:26:05,904 INFO  /deploy/ 
+2019-01-12 16:28:28,061 INFO  /deploy/ 
+2019-01-12 16:28:35,311 INFO  /deploy/ 
+2019-01-12 16:44:01,357 INFO  /deploy/ 
+2019-01-12 16:44:07,460 INFO  /deploy/ 
+2019-01-12 16:44:44,198 WARNING  Not Found: /department/lock_department 
+2019-01-12 16:44:55,001 WARNING  Not Found: /department/lock_department 
+2019-01-12 16:48:16,167 WARNING  Not Found: /department/delete_department 
+2019-01-12 16:48:21,162 WARNING  Not Found: /department/edit_department 
+2019-01-12 16:50:15,329 WARNING  Not Found: /department/lock_department 
+2019-01-12 16:50:55,156 INFO  /deploy/ 
+2019-01-12 16:51:24,905 WARNING  Not Found: /department/delete_department 
+2019-01-12 16:51:59,617 INFO  /deploy/ 
+2019-01-12 16:52:10,058 INFO  /deploy/ 
+2019-01-12 16:52:12,217 INFO  /deploy/ 
+2019-01-12 16:55:02,784 INFO  /deploy/ 
+2019-01-12 16:57:23,326 INFO  /deploy/ 
+2019-01-12 17:08:08,675 INFO  /deploy/ 
+2019-01-12 17:11:00,342 INFO  /deploy/ 
+2019-01-12 17:11:00,430 INFO  /deploy/ 
+2019-01-12 17:11:00,658 INFO  /deploy/ 
+2019-01-12 17:12:26,990 INFO  /deploy/ 
+2019-01-12 17:12:27,127 INFO  /deploy/ 
+2019-01-12 17:13:05,990 INFO  /deploy/ 
+2019-01-12 17:14:28,752 INFO  /deploy/ 
+2019-01-12 17:16:39,505 INFO  /deploy/ 
+2019-01-12 17:17:20,539 INFO  /deploy/ 
+2019-01-12 17:17:20,731 INFO  /deploy/ 
+2019-01-12 17:17:28,464 INFO  /deploy/ 
+2019-01-12 17:19:32,686 INFO  /deploy/ 
+2019-01-12 17:26:44,776 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:27:58,653 INFO  /deploy/ 
+2019-01-12 17:27:58,726 INFO  /deploy/ 
+2019-01-12 17:29:56,790 INFO  /deploy/ 
+2019-01-12 17:30:54,458 INFO  /deploy/ 
+2019-01-12 17:30:57,799 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:30:59,188 INFO  /deploy/ 
+2019-01-12 17:31:07,807 INFO  /deploy/ 
+2019-01-12 17:31:11,781 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:31:13,444 INFO  /deploy/ 
+2019-01-12 17:31:18,762 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:31:20,179 INFO  /deploy/ 
+2019-01-12 17:31:42,108 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:31:48,806 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:32:01,096 INFO  /deploy/ 
+2019-01-12 17:32:06,776 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:32:08,133 INFO  /deploy/ 
+2019-01-12 17:32:19,716 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:32:22,527 INFO  /deploy/ 
+2019-01-12 17:32:29,967 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:32:31,726 INFO  /deploy/ 
+2019-01-12 17:34:38,482 INFO  /deploy/ 
+2019-01-12 17:34:42,319 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:35:35,288 INFO  /deploy/ 
+2019-01-12 17:35:38,528 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:36:12,400 INFO  /deploy/ 
+2019-01-12 17:36:16,798 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:36:18,361 INFO  /deploy/ 
+2019-01-12 17:41:36,773 INFO  /deploy/ 
+2019-01-12 17:41:38,374 INFO  /deploy/ 
+2019-01-12 17:41:42,145 INFO  /deploy/ 
+2019-01-12 17:41:49,487 INFO  /deploy/ 
+2019-01-12 17:42:29,549 INFO  /deploy/ 
+2019-01-12 17:44:38,813 INFO  /deploy/ 
+2019-01-12 17:44:42,816 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:44:47,631 INFO  /deploy/ 
+2019-01-12 17:44:53,541 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:44:54,932 INFO  /deploy/ 
+2019-01-12 17:48:21,324 INFO  /deploy/ 
+2019-01-12 17:49:08,664 INFO  /deploy/ 
+2019-01-12 17:50:42,381 INFO  /deploy/ 
+2019-01-12 17:50:57,121 INFO  /deploy/ 
+2019-01-12 17:51:04,422 INFO  /deploy/ 
+2019-01-12 17:51:36,782 INFO  /deploy/ 
+2019-01-12 17:52:17,562 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 17:52:21,282 INFO  /deploy/ 
+2019-01-12 17:52:27,502 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:52:33,702 WARNING  Not Found: /department/delete_department 
+2019-01-12 17:52:38,862 WARNING  Not Found: /department/lock_department 
+2019-01-12 17:57:30,305 INFO  /deploy/ 
+2019-01-12 17:57:30,426 INFO  /deploy/ 
+2019-01-12 17:58:09,254 INFO  /deploy/ 
+2019-01-12 17:58:12,603 INFO  /deploy/ 
+2019-01-12 17:59:48,370 INFO  /deploy/ 
+2019-01-12 18:00:17,015 INFO  /deploy/ 
+2019-01-12 18:02:02,094 WARNING  Not Found: /department/delete_department 
+2019-01-12 18:02:20,007 WARNING  Not Found: /department/lock_department 
+2019-01-12 18:02:36,645 WARNING  Not Found: /department/lock_department 
+2019-01-12 18:02:39,611 INFO  /deploy/ 
+2019-01-12 18:02:43,491 INFO  /deploy/ 

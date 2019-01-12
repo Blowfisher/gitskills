@@ -11,8 +11,8 @@
 </div>
 <div>
   <div class="btn-group user_manager_add pull-right clearfix" style="margin-right: 20px;">
-    <button  type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-open-file"></span> 导出用户</button>
-    <button  type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-save-file"></span> 导入用户</button>
+<!--    <button  type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-open-file"></span> 导出用户</button>
+    <button  type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-save-file"></span> 导入用户</button> -->
     <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#user_add"><span class="glyphicon glyphicon-plus"></span> 添加用户</button>
   </div>
   <div style="margin-right: 20px;" >
@@ -81,9 +81,9 @@
 {% endfor %}
 </tbody>
 </table>
-<form>
+<form id="booter_tip">
  <div class="input-group">
- <button type="button" class="btn btn-xs btn-defualt" id='selector_btn' select_all=false>全选</button>
+ <button type="button" class="btn btn-xs btn-default" id='selector_btn' select_all=false>全选</button>
  <button type="button" class="btn btn-xs btn-danger" id="del_btn"><span class="glyphicon glyphicon-trash"></span> 删除</button>
  </div>
 </form>
@@ -156,13 +156,13 @@
               <br/>
               <div class="input-group">
               <span class="input-group-addon">新密码 ：</span>
-              <input type="password" class="form-control" style="width:320px;" >
+              <input type="password" class="form-control" style="width:320px;" id="new_pwd">
               <br/>
              </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">提交更改</button>
+                <button type="button" class="btn btn-primary" id="rpwd_submit">提交更改</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
@@ -215,11 +215,12 @@
 
 
 <script>
+var tr_example = $('tr').last().clone();
 $("[data_selector]").parent().click(function(){
      let btn = $("[data_selector]").parent().parent().prev();
      btn.html(this.innerText+'<span class="caret"></span>');
      role_id = this.children[0].getAttribute("data_selector");
-     btn.attr("checkinfo",role_id);
+     btn.attr("checkinfo",role_id)
 });
 
 
@@ -233,35 +234,56 @@ $("#user_add_btn").click(function(){
 	re = /([0-9a-zA-Z\_]){2,63}/
     if(urole && uname && pwd1 && pwd2){
 	if (re.test(uname)){
-		if (udesc.length < 255){
-			if (pwd1 === pwd2 && pwd1.length < 255 && pwd2.length <255) {
-				if ("123".indexOf(urole)+1) {
-					$.ajax({
-						url: "/consumer",
-						type: "POST",
-						dataType: "json",
-						data: {"username":uname,"role":urole,"desc":udesc,"pwd":pwd1},
-					})
-					.done(function() {
-						console.log("success");
-					})
-					.fail(function() {
-						console.log("error");
-					})
-					.always(function() {
-	                                        $("[data_selector]").parent().parent().prev().attr("checkinfo","").html("选择角色"+'<span class="caret"></span>');
-	                                        $("[name='username']").prop("value","");
-	                                        $("[name='desc']").prop("value","");
-                                        	$("[name='pwd1']").prop("value","");
-                                               	$("[name='pwd2']").prop("value","");
-                                                $("#user_add").modal("hide");
-					});
-					
-				}else{ console.log("用户角色选择失败")}
-			}else{ console.log("密码格式不正确")}
-		}else{ console.log("描述信息过长")}
-	}else { console.log("用户名格式不正确。数字 字母下划线 区分大小写")}
-}else{ console.log("请完成必填项.")}})
+	 if (udesc.length < 255){
+	  if (pwd1 === pwd2 && pwd1.length < 255 && pwd1.length >= 6) {
+        	if ("123".indexOf(urole)+1) {
+		$.ajax({
+			url: "/consumer/add_user",
+			type: "POST",
+			dataType: "json",
+			data: {"username":uname,"role":urole,"desc":udesc,"pwd":pwd1},
+			})
+			.done(function(data) {
+                           let example = $('tr').last().clone();
+                           if (example === ''){ example = tr_example};
+                           let id_value = example.attr('data_row_id',(parseInt($('tr').last().attr('data_row_id'))+1));
+                           let td_list = example.children();
+                           let j =0;
+                           example.children().first().children().attr('data_check_box',data.id);
+                           example.children().first().next().text(uname);
+                           example.children().first().next().next().text(udesc);
+                           example.children().children().first().attr('data_check_box',data.id);
+                           if(urole === "1"){
+                            let role_name = '系统管理员';
+                           }else if(urole === "2"){
+                            let role_name = '部门管理员';
+                           }else if(urole === "3"){
+                            let role_name = '用户';
+                           };
+                           example.children().first().next().next().next().children().text(role_name);
+                           for (let i of td_list){
+                              $(i).attr('data_cell_id',id_value + '-'+j) ;
+                           };
+                          $('tbody').append(example); 
+			})
+			.fail(function() {
+			console.log("error");
+			})
+			.always(function() {
+                         $("[data_selector]").parent().parent().prev().attr("checkinfo","").html("选择角色"+'<span class="caret"></span>');
+                          $("[name='username']").prop("value","");
+                          $("[name='desc']").prop("value","");
+                       	$("[name='pwd1']").prop("value","");
+                      	$("[name='pwd2']").prop("value","");
+                         $("#user_add").modal("hide");
+			});
+                        }else{ alert("用户角色选择失败")}
+			}else{ alert("密码格式不正确")}
+		}else{ alert("描述信息过长")}
+	}else { alert("用户名格式不正确。数字 字母下划线 区分大小写")}
+}else{ alert("请完成必填项.")}
+});
+
 
 
 // 用户删除
@@ -280,7 +302,7 @@ $("#del_btn").click(function(){
 	result = confirm("警告！ 此操作不可逆 是否删除？")
 	if (result){
 		$.ajax({
-			url: '/path/to/file',
+			url: '/consumer/user_delete',
 			type: 'POST',
 			dataType: 'json',
 			data: {"uid": uidlist},
@@ -288,8 +310,14 @@ $("#del_btn").click(function(){
 		.done(function() {
 		    for(let i of b){
 		        if (i.checked){
-		            $(i).remove();
-		        }
+		            $(i).parent().parent().remove();
+		        };
+                       let box_list = $("[data_check_box]").filter("input[type='checkbox']");
+                       if (box_list === ''){
+                       $("#booter_tip").hide();
+                       }else {
+                        $("#booter_tip").show();
+                     }
                     }	
 		})
 		.fail(function() {
@@ -300,35 +328,11 @@ $("#del_btn").click(function(){
 		});
 		
 	}else{
-		uidlist = [];
+		uidlist = []
 	}
-});
+    });
 
 
-	if (result){
-		$.ajax({
-			url: '/path/to/file',
-			type: 'POST',
-			dataType: 'json',
-			data: {"uid": uidlist},
-		})
-		.done(function() {
-		    for(let i of b){
-		        if (i.checked){
-		            $(i).remove();
-		        }
-                    }	
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
-		
-	}else{
-		uidlist = [];
-	}
 
 // 用户编辑
 $("[data_action]").click(function(){
@@ -353,22 +357,46 @@ $("[data_action]").click(function(){
         $("#user_info_edit").next().next().children("input").prop("value",loginname);
         $("#user_info_edit").siblings().last().children().last().prop("value",descname);
         $("#user_change").modal('show');
+        $("#user_edit_btn").click(function(){
+           let path = "/consumer/edit_user";
+           let tmp_data = [loginname,descname,rolename];
+           ajax_post(path,tmp_data,function1("/consumer"));
+        })
     }else if(action == "reset_pwd"){
         $("#repwd").find("input").prop("value","");
         $("#repwd").modal('show');
+        $("#myModalLabel").text(loginname);
+        $("#rpwd_submit").click(function(){
+            let path = '/';
+            let tmp_data =  $("#new_pwd").prop("value");
+            if (tmp_data.length < 6){
+              alert("密码长度不足.");
+              return
+            };
+            ajax_post(path,tmp_data,function1("/consumer"));
+        })
     }else if (action === "lock"){
         let result = confirm("是否禁用 ?");
         if (result){
             console.log("locked.");
+            let path = "/consumer/lock_user";
+            let tmp_data = loginname;
+            ajax_post(path,tmp_data,function1("/consumer"));
         }
     }else if (action === "unlock"){
         let result = confirm("是否解禁 ?");
-        console.log("unlocked.");
+        if (result){
+            let path = "/consumer/unlock_user";
+            let tmp_data = loginname;
+            ajax_post(path,tmp_data,function1("/consumer"));
+        }
     }
-});
+  });
 
 //刷新列表
-$("#department_refresh")
+$("#department_refresh").click(function(){
+  location.assign("/consumer");
+});
 
 </script>
 {%endblock%}
