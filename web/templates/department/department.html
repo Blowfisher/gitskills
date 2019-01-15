@@ -69,7 +69,7 @@
 
 <div class="input-group ">
 <button type="button" class="btn btn-xs btn-defualt" id="selector_btn" select_all=false>全选</button>
-<button type="button" class="btn btn-xs btn-danger" id="dpart_lock"><span class="glyphicon glyphicon-lock"></span> 禁用</button>
+<button type="button" class="btn btn-xs btn-danger" data_action="dpart_lock"><span class="glyphicon glyphicon-lock"></span> 禁用</button>
 </div> 	
 
 <div class="modal fade" id="department_add">
@@ -122,6 +122,7 @@
   </form>
 </div>
 <div class="modal-footer">
+  <button type="button" class="btn btn-success" style="float:left" data-dismiss="modal" data_action="dpt_unlock">解锁</button>
   <button type="button" class="btn btn-info" data-dismiss="modal">返回</button>
   <input type="submit"  class="btn btn-primary" name="department_edit_tj" value="提交">
 </div>
@@ -133,8 +134,13 @@
 
 <script>
 
-//部门禁用 
-$("#dpart_lock").click(function(){
+//部门禁用 edit delete operation.
+$("[data_action]").click(function(){
+        let action = this.getAttribute("data_action");
+        let dp_desc = $(this).parent().parent().siblings().first().next().children().text();
+        let dpname2 = $(this).parent().parent().siblings().first().next().text().split(' ')[0];
+        let pid = $(this).parent().parent().siblings().first().children().attr('data_check_box');
+        if(action === 'dpart_lock'){
 	var b = $("[data_check_box]").filter("input[type='checkbox']");
 	var uidlist = [];
 	for (let i of b) {
@@ -149,19 +155,19 @@ $("#dpart_lock").click(function(){
 	result = confirm("⚠️  此操作会导致文件不可访问？")
         if (result){
         let path = "/department/lock_department";
-        let tmp_data = {"uid":uidlist};
-        ajax_post(path,tmp_data,function1("/department")) ;
+        for (let i of uidlist){
+          $.post(path,{"pid":i})
         }
-});
-
-
-
-
-$("[data_action]").click(function(){
-   let action = this.getAttribute("data_action");
-   let dp_desc = $(this).parent().parent().siblings().first().next().children().text();
-   let dpname2 = $(this).parent().parent().siblings().first().next().text().split(' ')[0];
-   if (action === "edit"){
+         function1('/department');
+       }
+      }else if(action === 'dpt_unlock'){
+        let result = confirm("⚠️  是否解禁组织？");
+        if(result){
+          let path = '/department/locke_department'
+          let tmp_data = {"pid":pid}
+          ajax_post(path,tmp_data,function1('/department'))
+        }
+      }else if (action === "edit"){
     $('#department_edit_lable').children().text(dp_desc);
     $("[name='department_edit']").prop('value',dpname2);
     $("[name='department_edit_desc']").prop('value',dp_desc);
@@ -175,6 +181,10 @@ $("[data_action]").click(function(){
      }
    }
 });
+
+
+
+
 
 $("input[name ='department_edit_tj']").click(function(){
   let dpname = $("input[name = 'department_edit']").prop("value");

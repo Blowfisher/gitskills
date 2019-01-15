@@ -140,7 +140,7 @@ def dpt_del(request):
     return
 
 def dpt_lock(request):
-    gid = request.POST.get('gid','')
+    gid = request.POST.get('pid','')
     dpt_name = request.POST.get('dptname','')
     dpt_locked = request.POST.get('dpt_locked','')
     if lock:

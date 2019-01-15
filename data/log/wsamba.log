@@ -1273,3 +1273,1716 @@ RuntimeError: You called this URL via POST, but the URL doesn't end in a slash a
 2019-01-12 18:02:36,645 WARNING  Not Found: /department/lock_department 
 2019-01-12 18:02:39,611 INFO  /deploy/ 
 2019-01-12 18:02:43,491 INFO  /deploy/ 
+2019-01-12 18:13:30,350 WARNING  Not Found: /department/lock_department 
+2019-01-12 18:19:20,637 INFO  /deploy/ 
+2019-01-12 18:19:27,679 INFO  /deploy/ 
+2019-01-12 22:24:41,512 INFO  Kname: samba_conf was get. 
+2019-01-12 22:24:41,513 INFO  Kname: samba_conf was get. 
+2019-01-12 22:24:41,514 INFO  Kname: samba_conf was get. 
+2019-01-12 22:24:50,977 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:25:09,669 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:25:16,350 WARNING  Not Found: /department/lock_department 
+2019-01-12 22:25:22,922 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:25:28,997 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:25:31,738 INFO  /deploy/ 
+2019-01-12 22:25:41,475 WARNING  Not Found: /deploy/set_deploy 
+2019-01-12 22:25:43,774 INFO  /deploy/ 
+2019-01-12 22:25:50,914 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:26:40,547 WARNING  Not Found: /consumer/lock_user 
+2019-01-12 22:26:56,075 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 22:27:02,662 WARNING  Not Found: /consumer/edit_user 
+2019-01-12 22:27:09,116 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:33:15,253 INFO  Kname: samba_conf was get. 
+2019-01-12 22:33:15,255 INFO  Kname: samba_conf was get. 
+2019-01-12 22:33:15,256 INFO  Kname: samba_conf was get. 
+2019-01-12 22:33:15,259 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:34:14,948 INFO  Kname: samba_conf was get. 
+2019-01-12 22:34:14,949 INFO  Kname: samba_conf was get. 
+2019-01-12 22:34:14,950 INFO  Kname: samba_conf was get. 
+2019-01-12 22:34:19,233 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:34:58,321 INFO  Kname: samba_conf was get. 
+2019-01-12 22:34:58,322 INFO  Kname: samba_conf was get. 
+2019-01-12 22:34:58,323 INFO  Kname: samba_conf was get. 
+2019-01-12 22:35:02,405 WARNING  Not Found: /consumer/lock_user 
+2019-01-12 22:35:59,375 WARNING  Not Found: /consumer/edit_user 
+2019-01-12 22:36:04,696 WARNING  Not Found: /consumer/lock_user 
+2019-01-12 22:36:11,875 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:36:17,423 WARNING  Not Found: /consumer/user_delete 
+2019-01-12 22:37:21,139 INFO  Kname: samba_conf was get. 
+2019-01-12 22:37:21,141 INFO  Kname: samba_conf was get. 
+2019-01-12 22:37:21,141 INFO  Kname: samba_conf was get. 
+2019-01-12 22:37:21,144 WARNING  Not Found: /consumer/lock_user 
+2019-01-12 22:37:27,763 WARNING  Forbidden (CSRF token missing or incorrect.): / 
+2019-01-12 22:37:32,824 WARNING  Not Found: /consumer/user_delete 
+2019-01-13 10:20:13,008 INFO  Kname: samba_conf was get. 
+2019-01-13 10:20:13,010 INFO  Kname: samba_conf was get. 
+2019-01-13 10:20:13,010 INFO  Kname: samba_conf was get. 
+2019-01-13 10:20:20,431 WARNING  Not Found: /department/lock_department 
+2019-01-13 10:20:33,731 WARNING  Not Found: /department/delete_department 
+2019-01-13 10:20:45,011 INFO  /deploy/ 
+2019-01-13 11:29:42,702 INFO  Kname: samba_conf was get. 
+2019-01-13 11:29:42,704 ERROR  Internal Server Error: / 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/code/samba/web/web/urls.py", line 18, in <module>
+    import dashboard.urls,browse.urls,consumer.urls,deploy.urls,department.urls
+  File "/code/samba/web/consumer/urls.py", line 10, in <module>
+    url(r'reset_pwd$',views.reset_pwd),
+AttributeError: 'module' object has no attribute 'reset_pwd'
+2019-01-13 11:29:44,677 ERROR  Internal Server Error: /favicon.ico 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/code/samba/web/web/urls.py", line 18, in <module>
+    import dashboard.urls,browse.urls,consumer.urls,deploy.urls,department.urls
+  File "/code/samba/web/consumer/urls.py", line 10, in <module>
+    url(r'reset_pwd$',views.reset_pwd),
+AttributeError: 'module' object has no attribute 'reset_pwd'
+2019-01-13 11:30:14,321 ERROR  Internal Server Error: / 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/code/samba/web/web/urls.py", line 18, in <module>
+    import dashboard.urls,browse.urls,consumer.urls,deploy.urls,department.urls
+  File "/code/samba/web/consumer/urls.py", line 11, in <module>
+    url(r'unlock_user$',views.user_unlock)
+AttributeError: 'module' object has no attribute 'user_unlock'
+2019-01-13 11:30:15,017 ERROR  Internal Server Error: /favicon.ico 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/code/samba/web/web/urls.py", line 18, in <module>
+    import dashboard.urls,browse.urls,consumer.urls,deploy.urls,department.urls
+  File "/code/samba/web/consumer/urls.py", line 11, in <module>
+    url(r'unlock_user$',views.user_unlock)
+AttributeError: 'module' object has no attribute 'user_unlock'
+2019-01-13 11:31:47,036 INFO  Kname: samba_conf was get. 
+2019-01-13 11:31:47,037 INFO  Kname: samba_conf was get. 
+2019-01-13 11:31:47,528 WARNING  Not Found: /favicon.ico 
+2019-01-13 11:31:57,876 INFO  /deploy/ 
+2019-01-13 11:32:00,515 INFO  /deploy/ 
+2019-01-13 11:32:17,245 WARNING  Not Found: /consumer/edit_user 
+2019-01-13 11:32:22,488 WARNING  Not Found: /consumer/edit_user 
+2019-01-13 11:32:37,559 WARNING  Not Found: /consumer/lock_user 
+2019-01-13 20:23:36,933 INFO  Kname: samba_conf was get. 
+2019-01-13 20:23:36,935 ERROR  Internal Server Error: / 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/code/samba/web/web/urls.py", line 18, in <module>
+    import dashboard.urls,browse.urls,consumer.urls,deploy.urls,department.urls
+  File "/code/samba/web/consumer/urls.py", line 10, in <module>
+    url(r'reset_pwd$',views.reset_pwd),
+AttributeError: 'module' object has no attribute 'reset_pwd'
+2019-01-13 20:23:41,289 ERROR  Internal Server Error: /favicon.ico 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "/data/django/lib/python2.7/site-packages/django/middleware/common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/code/samba/web/web/urls.py", line 18, in <module>
+    import dashboard.urls,browse.urls,consumer.urls,deploy.urls,department.urls
+  File "/code/samba/web/consumer/urls.py", line 10, in <module>
+    url(r'reset_pwd$',views.reset_pwd),
+AttributeError: 'module' object has no attribute 'reset_pwd'
+2019-01-13 20:25:18,880 INFO  Kname: samba_conf was get. 
+2019-01-13 20:25:18,881 INFO  Kname: samba_conf was get. 
+2019-01-13 20:25:19,274 WARNING  Not Found: /favicon.ico 
+2019-01-13 20:25:59,875 WARNING  Not Found: /consumer/add_user 
+2019-01-13 20:37:33,356 WARNING  Not Found: /consumer/add_user 
+2019-01-13 20:42:54,102 WARNING  Not Found: /consumer/add_user 
+2019-01-13 20:44:52,364 INFO  Kname: samba_conf was get. 
+2019-01-13 20:44:52,365 INFO  Kname: samba_conf was get. 
+2019-01-13 20:44:52,366 INFO  Kname: samba_conf was get. 
+2019-01-13 20:44:52,369 WARNING  Not Found: /consumer/add_user 
+2019-01-13 20:45:37,373 INFO  Kname: samba_conf was get. 
+2019-01-13 20:45:37,374 INFO  Kname: samba_conf was get. 
+2019-01-13 20:45:37,375 INFO  Kname: samba_conf was get. 
+2019-01-13 20:45:37,381 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 38, in add_user
+    b.creator(name,pwd,role,desc).save()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert
+    using=using, raw=raw)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 973, in execute_sql
+    for sql, params in self.as_sql():
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 931, in as_sql
+    for obj in self.query.objs
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 710, in get_db_prep_save
+    prepared=False)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 702, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 1868, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 20:45:54,190 INFO  Kname: samba_conf was get. 
+2019-01-13 20:45:54,191 INFO  Kname: samba_conf was get. 
+2019-01-13 20:45:54,192 INFO  Kname: samba_conf was get. 
+2019-01-13 20:45:54,197 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 38, in add_user
+    b.creator(name,pwd,role,desc).save()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert
+    using=using, raw=raw)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 973, in execute_sql
+    for sql, params in self.as_sql():
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 931, in as_sql
+    for obj in self.query.objs
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 710, in get_db_prep_save
+    prepared=False)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 702, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 1868, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 20:46:17,978 INFO  Kname: samba_conf was get. 
+2019-01-13 20:46:17,979 INFO  Kname: samba_conf was get. 
+2019-01-13 20:46:17,980 INFO  Kname: samba_conf was get. 
+2019-01-13 20:46:17,985 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 38, in add_user
+    b.creator(name,pwd,role,desc).save()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert
+    using=using, raw=raw)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 973, in execute_sql
+    for sql, params in self.as_sql():
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 931, in as_sql
+    for obj in self.query.objs
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 710, in get_db_prep_save
+    prepared=False)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 702, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 1868, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 20:46:51,097 INFO  USER wangbo1was add to db. 
+2019-01-13 20:46:51,535 INFO  User was created. 
+2019-01-13 20:46:51,536 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 43, in add_user
+    wuser = wsuser.wsuser(name,pwd)
+  File "/code/samba/web/wsamba/wsuser.py", line 15, in __init__
+    self.Lock = Lock
+NameError: global name 'Lock' is not defined
+2019-01-13 20:58:30,604 INFO  Kname: samba_conf was get. 
+2019-01-13 20:58:30,606 INFO  Kname: samba_conf was get. 
+2019-01-13 20:58:30,606 INFO  Kname: samba_conf was get. 
+2019-01-13 21:22:16,389 INFO  Kname: samba_conf was get. 
+2019-01-13 21:22:16,393 INFO  Kname: samba_conf was get. 
+2019-01-13 21:22:16,394 INFO  Kname: samba_conf was get. 
+2019-01-13 21:22:16,398 ERROR  Internal Server Error: /consumer/edit_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 58, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 21:23:02,788 WARNING  Not Found: /consumer/user_edit 
+2019-01-13 21:23:02,886 ERROR  userdel: wangbo1 home directory (/home/wangbo1) not found
+ 
+2019-01-13 21:23:02,896 ERROR  Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+
+1
+ 
+2019-01-13 21:23:02,897 ERROR  Internal Server Error: /consumer/edit_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 64, in user_edit
+    wsuser.wsuser(name).wudel()
+  File "/code/samba/web/wsamba/wsuser.py", line 15, in __init__
+    self.Lock = Lock
+NameError: global name 'Lock' is not defined
+2019-01-13 21:30:13,956 INFO  Kname: samba_conf was get. 
+2019-01-13 21:30:13,958 INFO  Kname: samba_conf was get. 
+2019-01-13 21:30:13,958 INFO  Kname: samba_conf was get. 
+2019-01-13 21:30:13,963 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 58, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 21:34:21,758 WARNING  Not Found: /favicon.ico 
+2019-01-13 21:35:36,588 WARNING  Not Found: /favicon.ico 
+2019-01-13 21:46:27,035 WARNING  Not Found: /consumer/edit_user 
+2019-01-13 21:46:27,044 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 58, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 21:53:38,717 WARNING  Not Found: /consumer/edit_user 
+2019-01-13 21:53:38,723 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 58, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 21:54:16,593 WARNING  Not Found: /consumer/edit_user 
+2019-01-13 21:54:16,599 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 58, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 21:59:43,437 WARNING  Not Found: /consumer/edit_user 
+2019-01-13 21:59:43,445 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 58, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 22:04:49,519 WARNING  Not Found: /consumer/edit_user 
+2019-01-13 22:04:49,528 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 58, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 22:04:49,559 WARNING  Not Found: /consumer/edit_user 
+2019-01-13 22:06:14,380 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 58, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-13 22:06:14,394 ERROR  userdel: user 'wangbo1' does not exist
+1
+ 
+2019-01-13 22:06:14,428 ERROR  Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+
+1
+ 
+2019-01-13 22:06:14,428 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 64, in user_edit
+    wsuser.wsuser(name).wudel()
+  File "/code/samba/web/wsamba/wsuser.py", line 15, in __init__
+    self.Lock = Lock
+NameError: global name 'Lock' is not defined
+2019-01-13 22:19:49,697 INFO  Kname: samba_conf was get. 
+2019-01-13 22:19:49,698 INFO  Kname: samba_conf was get. 
+2019-01-13 22:19:49,699 INFO  Kname: samba_conf was get. 
+2019-01-13 22:24:17,282 INFO  Kname: samba_conf was get. 
+2019-01-13 22:24:17,283 INFO  Kname: samba_conf was get. 
+2019-01-13 22:24:17,284 INFO  Kname: samba_conf was get. 
+2019-01-13 22:28:47,817 INFO  USER wangbo2was add to db. 
+2019-01-13 22:28:47,900 INFO  User was created. 
+2019-01-13 22:28:48,369 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 44, in add_user
+    wuser.wuadd()
+  File "/code/samba/web/wsamba/wsuser.py", line 33, in wuadd
+    logger.info('SAMBA USER:'+self.name +'was added.')
+AttributeError: 'wsuser' object has no attribute 'name'
+2019-01-13 22:32:08,489 INFO  Kname: samba_conf was get. 
+2019-01-13 22:32:08,490 INFO  Kname: samba_conf was get. 
+2019-01-13 22:32:08,491 INFO  Kname: samba_conf was get. 
+2019-01-13 22:34:57,030 INFO  Kname: samba_conf was get. 
+2019-01-13 22:34:57,033 INFO  Kname: samba_conf was get. 
+2019-01-13 22:34:57,034 INFO  Kname: samba_conf was get. 
+2019-01-13 22:35:21,139 INFO  Kname: samba_conf was get. 
+2019-01-13 22:35:21,142 INFO  Kname: samba_conf was get. 
+2019-01-13 22:35:21,143 INFO  Kname: samba_conf was get. 
+2019-01-13 22:43:19,640 INFO  Kname: samba_conf was get. 
+2019-01-13 22:43:19,641 INFO  Kname: samba_conf was get. 
+2019-01-13 22:43:19,642 INFO  Kname: samba_conf was get. 
+2019-01-13 22:47:46,824 INFO  Kname: samba_conf was get. 
+2019-01-13 22:47:46,827 ERROR  Internal Server Error: /consumer/ 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/data/django/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/code/samba/web/web/urls.py", line 18, in <module>
+    import dashboard.urls,browse.urls,consumer.urls,deploy.urls,department.urls
+  File "/code/samba/web/consumer/urls.py", line 7, in <module>
+    url(r'user_delete$',views.user_del),
+AttributeError: 'module' object has no attribute 'user_del'
+2019-01-13 22:47:57,791 INFO  Kname: samba_conf was get. 
+2019-01-13 22:47:57,791 INFO  Kname: samba_conf was get. 
+2019-01-13 22:53:47,134 INFO  Kname: samba_conf was get. 
+2019-01-13 22:53:47,136 INFO  Kname: samba_conf was get. 
+2019-01-13 22:53:47,137 INFO  Kname: samba_conf was get. 
+2019-01-13 22:55:08,436 INFO  Kname: samba_conf was get. 
+2019-01-13 22:55:08,439 INFO  Kname: samba_conf was get. 
+2019-01-13 22:55:08,439 INFO  Kname: samba_conf was get. 
+2019-01-13 22:55:24,163 INFO  USER wangbo3was add to db. 
+2019-01-13 22:55:24,233 INFO  User was created. 
+2019-01-13 22:55:24,318 INFO  SAMBA USER:wangbo3was added. 
+2019-01-13 22:55:24,322 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 50, in add_user
+    return JsonResponse(json.dumps({"uid":uid,"uname":name,"role":role,"desc":desc,"stat":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-13 23:00:00,446 INFO  Kname: samba_conf was get. 
+2019-01-13 23:00:00,449 INFO  Kname: samba_conf was get. 
+2019-01-13 23:00:00,449 INFO  Kname: samba_conf was get. 
+2019-01-13 23:00:19,377 INFO  /deploy/ 
+2019-01-13 23:00:25,182 INFO  /deploy/ 
+2019-01-13 23:05:03,455 INFO  Kname: samba_conf was get. 
+2019-01-13 23:05:03,457 INFO  Kname: samba_conf was get. 
+2019-01-13 23:05:03,458 INFO  Kname: samba_conf was get. 
+2019-01-13 23:05:03,461 INFO  ----------------- 
+2019-01-13 23:06:20,704 INFO  Kname: samba_conf was get. 
+2019-01-13 23:06:20,708 INFO  Kname: samba_conf was get. 
+2019-01-13 23:06:20,709 INFO  Kname: samba_conf was get. 
+2019-01-13 23:06:23,621 INFO  ---------------------- 
+2019-01-13 23:06:23,621 INFO   
+2019-01-13 23:06:23,621 INFO  ---------------------- 
+2019-01-13 23:07:32,219 INFO  ---------------------- 
+2019-01-13 23:07:32,219 INFO   
+2019-01-13 23:07:32,219 INFO  ---------------------- 
+2019-01-13 23:08:15,620 INFO  ---------------------- 
+2019-01-13 23:08:15,620 INFO   
+2019-01-13 23:08:15,620 INFO  ---------------------- 
+2019-01-13 23:11:34,153 INFO  Kname: samba_conf was get. 
+2019-01-13 23:11:34,156 INFO  Kname: samba_conf was get. 
+2019-01-13 23:11:34,157 INFO  Kname: samba_conf was get. 
+2019-01-13 23:11:38,011 INFO  ---------------------- 
+2019-01-13 23:11:38,011 INFO  [] 
+2019-01-13 23:13:59,005 INFO  Kname: samba_conf was get. 
+2019-01-13 23:13:59,007 INFO  Kname: samba_conf was get. 
+2019-01-13 23:13:59,008 INFO  Kname: samba_conf was get. 
+2019-01-13 23:14:03,949 INFO  ---------------------- 
+2019-01-13 23:14:03,950 INFO  <QueryDict: {u'uid[]': [u'6']}> 
+2019-01-13 23:14:42,730 INFO  ---------------------- 
+2019-01-13 23:14:42,730 INFO  <QueryDict: {u'uid[]': [u'1', u'2', u'3', u'4', u'5']}> 
+2019-01-13 23:19:11,753 INFO  ---------------------- 
+2019-01-13 23:19:11,753 INFO  <QueryDict: {u'uid[]': [u'6']}> 
+2019-01-13 23:23:38,252 INFO  ---------------------- 
+2019-01-13 23:23:38,252 INFO  <QueryDict: {u'uid[]': [u'5', u'6']}> 
+2019-01-13 23:27:57,553 INFO  ---------------------- 
+2019-01-13 23:27:57,553 INFO  <QueryDict: {u'uid[]': [u'5', u'6']}> 
+2019-01-13 23:29:15,153 INFO  ---------------------- 
+2019-01-13 23:29:15,153 INFO  <QueryDict: {u'undefined': [u'', u'']}> 
+2019-01-13 23:31:40,023 INFO  ---------------------- 
+2019-01-13 23:31:40,023 INFO  <QueryDict: {u'uid[]': [u'4', u'5', u'6']}> 
+2019-01-13 23:33:40,814 INFO  ---------------------- 
+2019-01-13 23:33:40,814 INFO  <QueryDict: {u'uid[]': [u'4', u'5', u'6']}> 
+2019-01-13 23:34:24,249 INFO  ---------------------- 
+2019-01-13 23:34:24,249 INFO  <QueryDict: {u'uid[]': [u'4', u'5']}> 
+2019-01-13 23:36:26,531 INFO  ---------------------- 
+2019-01-13 23:36:26,532 INFO  <QueryDict: {u'uid[]': [u'4', u'5']}> 
+2019-01-13 23:42:00,382 INFO  ---------------------- 
+2019-01-13 23:42:00,382 INFO  <QueryDict: {u'uid': [u'5']}> 
+2019-01-13 23:42:00,385 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    for i in uid:
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-13 23:42:00,418 INFO  ---------------------- 
+2019-01-13 23:42:00,418 INFO  <QueryDict: {u'uid': [u'6']}> 
+2019-01-13 23:42:00,420 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    for i in uid:
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-13 23:42:39,942 INFO  ---------------------- 
+2019-01-13 23:42:39,942 INFO  <QueryDict: {u'uid': [u'5']}> 
+2019-01-13 23:42:39,944 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    Dpt_user.objects.filter(username=userid.username).remove().save()
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-13 23:42:39,982 INFO  ---------------------- 
+2019-01-13 23:42:39,982 INFO  <QueryDict: {u'uid': [u'6']}> 
+2019-01-13 23:42:39,985 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    Dpt_user.objects.filter(username=userid.username).remove().save()
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-13 23:46:36,387 INFO  ---------------------- 
+2019-01-13 23:46:36,387 INFO  <QueryDict: {u'uid': [u'6']}> 
+2019-01-13 23:46:36,390 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    userid = Sa_user.objects.get(id=i)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-13 23:48:15,388 INFO  ---------------------- 
+2019-01-13 23:48:15,389 INFO  <QueryDict: {u'uid': [u'6']}> 
+2019-01-13 23:48:15,390 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    userhandler.user_del(userid.username)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-14 00:04:31,722 INFO  ---------------------- 
+2019-01-14 00:04:31,723 INFO  <QueryDict: {u'uid': [u'6']}> 
+2019-01-14 00:04:31,725 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    userhandler.user_del(userid.username)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-14 00:04:31,756 INFO  ---------------------- 
+2019-01-14 00:04:31,756 INFO  <QueryDict: {u'uid': [u'5']}> 
+2019-01-14 00:04:31,758 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    userhandler.user_del(userid.username)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-14 00:05:03,324 INFO  ---------------------- 
+2019-01-14 00:05:03,324 INFO  <QueryDict: {u'uid': [u'5']}> 
+2019-01-14 00:05:03,326 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    userhandler.user_del(userid.username)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-14 00:05:03,359 INFO  ---------------------- 
+2019-01-14 00:05:03,359 INFO  <QueryDict: {u'uid': [u'6']}> 
+2019-01-14 00:05:03,361 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 104, in user_delete
+    userhandler.user_del(userid.username)
+AttributeError: 'QuerySet' object has no attribute 'remove'
+2019-01-14 00:10:15,232 INFO  Kname: samba_conf was get. 
+2019-01-14 00:10:15,234 INFO  Kname: samba_conf was get. 
+2019-01-14 00:10:15,234 INFO  Kname: samba_conf was get. 
+2019-01-14 00:10:18,904 WARNING  Not Found: /favicon.ico 
+2019-01-14 00:10:22,984 INFO  ---------------------- 
+2019-01-14 00:10:22,984 INFO  5 
+2019-01-14 00:10:22,987 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 103, in user_delete
+    Dpt_user.objects.filter(username=userid.username).delete().save()
+AttributeError: 'NoneType' object has no attribute 'save'
+2019-01-14 00:10:23,023 INFO  ---------------------- 
+2019-01-14 00:10:23,024 INFO  6 
+2019-01-14 00:10:23,026 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 103, in user_delete
+    Dpt_user.objects.filter(username=userid.username).delete().save()
+AttributeError: 'NoneType' object has no attribute 'save'
+2019-01-14 00:10:58,146 INFO  Kname: samba_conf was get. 
+2019-01-14 00:10:58,149 INFO  Kname: samba_conf was get. 
+2019-01-14 00:10:58,150 INFO  Kname: samba_conf was get. 
+2019-01-14 00:11:01,747 INFO  ---------------------- 
+2019-01-14 00:11:01,747 INFO  6 
+2019-01-14 00:11:01,752 INFO  ---------------------- 
+2019-01-14 00:11:01,753 INFO  5 
+2019-01-14 00:11:01,873 ERROR  userdel: wangbo3 home directory (/home/wangbo3) not found
+ 
+2019-01-14 00:11:01,879 ERROR  1
+ 
+2019-01-14 00:11:01,923 ERROR  Failed to find a Unix account for wangbo3
+Failed to delete entry for user wangbo3.
+1
+ 
+2019-01-14 00:11:01,924 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 106, in user_delete
+    userid.remove().save()
+AttributeError: 'Sa_user' object has no attribute 'remove'
+2019-01-14 00:11:02,036 ERROR  userdel: wangbo2 home directory (/home/wangbo2) not found
+ 
+2019-01-14 00:11:02,043 ERROR  1
+ 
+2019-01-14 00:11:02,076 ERROR  Failed to find a Unix account for wangbo2
+Failed to delete entry for user wangbo2.
+1
+ 
+2019-01-14 00:11:02,076 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 106, in user_delete
+    userid.remove().save()
+AttributeError: 'Sa_user' object has no attribute 'remove'
+2019-01-14 00:13:35,866 INFO  Kname: samba_conf was get. 
+2019-01-14 00:13:35,871 INFO  Kname: samba_conf was get. 
+2019-01-14 00:13:35,871 INFO  Kname: samba_conf was get. 
+2019-01-14 00:13:39,945 INFO  ---------------------- 
+2019-01-14 00:13:39,945 INFO  5 
+2019-01-14 00:13:39,957 INFO  ---------------------- 
+2019-01-14 00:13:39,957 INFO  6 
+2019-01-14 00:13:39,966 ERROR  userdel: user 'wangbo2' does not exist
+1
+ 
+2019-01-14 00:13:39,976 ERROR  1
+ 
+2019-01-14 00:13:39,980 ERROR  userdel: user 'wangbo3' does not exist
+1
+ 
+2019-01-14 00:13:39,993 ERROR  1
+ 
+2019-01-14 00:13:40,032 ERROR  Failed to find a Unix account for wangbo2
+Failed to delete entry for user wangbo2.
+1
+ 
+2019-01-14 00:13:40,057 ERROR  Failed to find a Unix account for wangbo3
+Failed to delete entry for user wangbo3.
+1
+ 
+2019-01-14 00:17:43,788 INFO  ---------------------- 
+2019-01-14 00:17:43,788 INFO  4 
+2019-01-14 00:17:43,799 ERROR  userdel: user 'wangbo1' does not exist
+1
+ 
+2019-01-14 00:17:43,806 ERROR  1
+ 
+2019-01-14 00:17:43,836 ERROR  Failed to find entry for user wangbo1.
+1
+ 
+2019-01-14 00:18:09,920 INFO  USER wangbo1was add to db. 
+2019-01-14 00:18:10,001 INFO  User was created. 
+2019-01-14 00:18:10,098 INFO  SAMBA USER:wangbo1was added. 
+2019-01-14 00:18:10,101 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 49, in add_user
+    return JsonResponse(json.dumps({"uid":uid,"uname":name,"role":role,"desc":desc,"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-14 00:19:01,424 INFO  Kname: samba_conf was get. 
+2019-01-14 00:19:01,427 INFO  Kname: samba_conf was get. 
+2019-01-14 00:19:01,427 INFO  Kname: samba_conf was get. 
+2019-01-14 00:19:05,958 INFO  ---------------------- 
+2019-01-14 00:19:05,959 INFO  7 
+2019-01-14 00:19:06,057 ERROR  userdel: wangbo1 home directory (/home/wangbo1) not found
+ 
+2019-01-14 00:19:06,063 ERROR  1
+ 
+2019-01-14 00:19:06,095 ERROR  Failed to find a Unix account for wangbo1
+Failed to delete entry for user wangbo1.
+1
+ 
+2019-01-14 00:19:21,898 INFO  USER wangbo1was add to db. 
+2019-01-14 00:19:21,979 INFO  User was created. 
+2019-01-14 00:19:22,030 INFO  SAMBA USER:wangbo1was added. 
+2019-01-14 00:19:22,032 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 49, in add_user
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-14 00:20:27,956 INFO  ---------------------- 
+2019-01-14 00:20:27,956 INFO  8 
+2019-01-14 00:20:28,046 ERROR  userdel: wangbo1 home directory (/home/wangbo1) not found
+ 
+2019-01-14 00:20:28,054 ERROR  1
+ 
+2019-01-14 00:20:28,087 ERROR  Failed to find a Unix account for wangbo1
+Failed to delete entry for user wangbo1.
+1
+ 
+2019-01-14 00:22:30,218 INFO  Kname: samba_conf was get. 
+2019-01-14 00:22:30,220 INFO  Kname: samba_conf was get. 
+2019-01-14 00:22:30,220 INFO  Kname: samba_conf was get. 
+2019-01-14 00:22:30,253 INFO  USER wangbo1was add to db. 
+2019-01-14 00:22:30,339 INFO  User was created. 
+2019-01-14 00:22:30,431 INFO  SAMBA USER:wangbo1was added. 
+2019-01-14 00:22:30,434 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 49, in add_user
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-14 00:23:00,555 INFO  ---------------------- 
+2019-01-14 00:23:00,556 INFO  9 
+2019-01-14 00:23:00,639 ERROR  userdel: wangbo1 home directory (/home/wangbo1) not found
+ 
+2019-01-14 00:23:00,645 ERROR  1
+ 
+2019-01-14 00:23:00,685 ERROR  Internal Server Error: /consumer/user_delete 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 105, in user_delete
+    wsuser.wsuser(userid.username).wudel()
+  File "/code/samba/web/wsamba/wsuser.py", line 42, in wudel
+    logger.info('SAMBA USER:'+self.name +'was deleted.')
+AttributeError: 'wsuser' object has no attribute 'name'
+2019-01-14 00:25:00,465 INFO  Kname: samba_conf was get. 
+2019-01-14 00:25:00,467 INFO  Kname: samba_conf was get. 
+2019-01-14 00:25:00,467 INFO  Kname: samba_conf was get. 
+2019-01-14 00:25:04,478 INFO  ---------------------- 
+2019-01-14 00:25:04,478 INFO  9 
+2019-01-14 00:25:04,488 ERROR  userdel: user 'wangbo1' does not exist
+1
+ 
+2019-01-14 00:25:04,493 ERROR  1
+ 
+2019-01-14 00:25:04,520 ERROR  user wangbo1 does not exist in the passdb
+1
+ 
+2019-01-14 00:25:32,250 INFO  USER wangbo1was add to db. 
+2019-01-14 00:25:32,334 INFO  User was created. 
+2019-01-14 00:25:32,424 INFO  SAMBA USER:wangbo1was added. 
+2019-01-14 00:25:32,426 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 49, in add_user
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-14 00:26:01,818 INFO  ---------------------- 
+2019-01-14 00:26:01,818 INFO  10 
+2019-01-14 00:26:01,933 ERROR  userdel: wangbo1 home directory (/home/wangbo1) not found
+ 
+2019-01-14 00:26:01,940 ERROR  1
+ 
+2019-01-14 00:26:01,999 INFO  SAMBA USER:wangbo1was deleted. 
+2019-01-14 00:27:09,949 INFO  Kname: samba_conf was get. 
+2019-01-14 00:27:09,950 INFO  Kname: samba_conf was get. 
+2019-01-14 00:27:09,951 INFO  Kname: samba_conf was get. 
+2019-01-14 00:27:10,019 INFO  USER wangbo1was add to db. 
+2019-01-14 00:27:10,140 INFO  User was created. 
+2019-01-14 00:27:10,238 INFO  SAMBA USER:wangbo1was added. 
+2019-01-14 00:27:10,240 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 49, in add_user
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-14 00:27:17,320 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:27:17,507 ERROR  userdel: wangbo1 home directory (/home/wangbo1) not found
+ 
+2019-01-14 00:27:17,516 ERROR  Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+
+1
+ 
+2019-01-14 00:32:19,379 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:32:19,422 ERROR  1
+ 
+2019-01-14 00:32:19,422 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 67, in user_edit
+    wsuser.wsuser(name).wuadd(name,pwd)
+NameError: global name 'pwd' is not defined
+2019-01-14 00:34:25,541 INFO  Kname: samba_conf was get. 
+2019-01-14 00:34:25,544 INFO  Kname: samba_conf was get. 
+2019-01-14 00:34:25,544 INFO  Kname: samba_conf was get. 
+2019-01-14 00:34:29,259 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:34:29,401 ERROR  1
+ 
+2019-01-14 00:34:29,401 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 67, in user_edit
+    wsuser.wsuser(name).wuadd(name,pwd)
+TypeError: wuadd() takes exactly 1 argument (3 given)
+2019-01-14 00:35:23,234 INFO  Kname: samba_conf was get. 
+2019-01-14 00:35:23,236 INFO  Kname: samba_conf was get. 
+2019-01-14 00:35:23,237 INFO  Kname: samba_conf was get. 
+2019-01-14 00:35:35,002 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:35:35,157 ERROR  1
+ 
+2019-01-14 00:35:35,157 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 67, in user_edit
+    wsuser.wsuser(name).wuadd(name,pwd)
+NameError: global name 'pwd' is not defined
+2019-01-14 00:36:11,802 INFO  Kname: samba_conf was get. 
+2019-01-14 00:36:11,804 INFO  Kname: samba_conf was get. 
+2019-01-14 00:36:11,805 INFO  Kname: samba_conf was get. 
+2019-01-14 00:36:18,553 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:36:18,644 INFO  fity2013------------------- 
+2019-01-14 00:36:18,677 ERROR  1
+ 
+2019-01-14 00:36:18,677 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 67, in user_edit
+    wsuser.wsuser(name).wuadd(name,pwd)
+NameError: global name 'pwd' is not defined
+2019-01-14 00:38:32,172 INFO  Kname: samba_conf was get. 
+2019-01-14 00:38:32,174 INFO  Kname: samba_conf was get. 
+2019-01-14 00:38:32,175 INFO  Kname: samba_conf was get. 
+2019-01-14 00:38:55,688 INFO  fity2013------------------- 
+2019-01-14 00:38:55,695 ERROR  1
+ 
+2019-01-14 00:38:55,705 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:38:55,848 ERROR  Failed to find a Unix account for wangbo1
+Failed to find a Unix account for wangbo1
+ 
+2019-01-14 00:38:55,854 ERROR  1
+ 
+2019-01-14 00:38:55,885 ERROR  Failed to find a Unix account for wangbo1
+Failed to find a Unix account for wangbo1
+Failed to find a Unix account for wangbo1
+ 
+2019-01-14 00:38:55,886 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 74, in user_edit
+    userid.save()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 803, in _save_table
+    forced_update)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 853, in _do_update
+    return filtered._update(values) > 0
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 580, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1062, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    sql, params = self.as_sql()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1030, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 710, in get_db_prep_save
+    prepared=False)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 702, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 1868, in get_prep_value
+    return int(value)
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-1: invalid decimal Unicode string
+2019-01-14 00:44:22,234 INFO  Kname: samba_conf was get. 
+2019-01-14 00:44:22,237 INFO  Kname: samba_conf was get. 
+2019-01-14 00:44:22,237 INFO  Kname: samba_conf was get. 
+2019-01-14 00:44:32,661 INFO  fity2013------------------- 
+2019-01-14 00:44:32,668 ERROR  1
+ 
+2019-01-14 00:44:32,714 ERROR  Failed to find a Unix account for wangbo1
+Failed to find a Unix account for wangbo1
+ 
+2019-01-14 00:44:32,721 ERROR  1
+ 
+2019-01-14 00:44:32,752 ERROR  Failed to find a Unix account for wangbo1
+Failed to find a Unix account for wangbo1
+Failed to find a Unix account for wangbo1
+ 
+2019-01-14 00:44:32,754 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 74, in user_edit
+    userid.save()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 803, in _save_table
+    forced_update)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 853, in _do_update
+    return filtered._update(values) > 0
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 580, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1062, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    sql, params = self.as_sql()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1030, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 710, in get_db_prep_save
+    prepared=False)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 702, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 1868, in get_prep_value
+    return int(value)
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-1: invalid decimal Unicode string
+2019-01-14 00:44:32,808 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:45:27,966 INFO  ---------------------- 
+2019-01-14 00:45:27,967 INFO  11 
+2019-01-14 00:45:27,979 ERROR  userdel: user 'wangbo1' does not exist
+1
+ 
+2019-01-14 00:45:27,985 ERROR  1
+ 
+2019-01-14 00:45:28,024 INFO  SAMBA USER:wangbo1  was deleted. 
+2019-01-14 00:45:49,889 INFO  USER wangbo1was add to db. 
+2019-01-14 00:45:49,975 INFO  User was created. 
+2019-01-14 00:45:50,044 INFO  SAMBA USER:wangbo1was added. 
+2019-01-14 00:45:50,047 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 49, in add_user
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-14 00:46:33,608 INFO  fity2013@------------------- 
+2019-01-14 00:46:33,616 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:46:33,776 INFO  SAMBA USER:wangbo1was added. 
+2019-01-14 00:46:33,822 INFO  SAMBA USER:wangbo1was enabled. 
+2019-01-14 00:46:33,824 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 74, in user_edit
+    userid.save()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 803, in _save_table
+    forced_update)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/base.py", line 853, in _do_update
+    return filtered._update(values) > 0
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 580, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1062, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    sql, params = self.as_sql()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1030, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 710, in get_db_prep_save
+    prepared=False)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 702, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 1868, in get_prep_value
+    return int(value)
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-1: invalid decimal Unicode string
+2019-01-14 00:49:43,732 INFO  Kname: samba_conf was get. 
+2019-01-14 00:49:43,735 INFO  Kname: samba_conf was get. 
+2019-01-14 00:49:43,736 INFO  Kname: samba_conf was get. 
+2019-01-14 00:49:48,669 INFO  fity2013@------------------- 
+2019-01-14 00:49:48,694 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 57, in user_edit
+    userid = Sa_user.objects.get(id=uid)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+2019-01-14 00:49:48,823 INFO  SAMBA USER:wangbo1was added. 
+2019-01-14 00:49:48,858 INFO  SAMBA USER:wangbo1was enabled. 
+2019-01-14 00:49:48,860 ERROR  Internal Server Error: /consumer/user_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 70, in user_edit
+    Sa_user.objects.filter(id=uid).update(username=name,desc=desc,userpwd=pwd,user_role=role)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/query.py", line 563, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1062, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    sql, params = self.as_sql()
+  File "/data/django/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1030, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 710, in get_db_prep_save
+    prepared=False)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 702, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/data/django/lib/python2.7/site-packages/django/db/models/fields/__init__.py", line 1868, in get_prep_value
+    return int(value)
+UnicodeEncodeError: 'decimal' codec can't encode characters in position 0-1: invalid decimal Unicode string
+2019-01-15 20:19:34,350 INFO  Kname: samba_conf was get. 
+2019-01-15 20:19:34,352 INFO  Kname: samba_conf was get. 
+2019-01-15 20:19:34,353 INFO  Kname: samba_conf was get. 
+2019-01-15 20:19:34,916 WARNING  Not Found: /favicon.ico 
+2019-01-15 20:19:48,350 INFO  ---------------------- 
+2019-01-15 20:19:48,350 INFO  12 
+2019-01-15 20:19:48,619 ERROR  userdel: wangbo1 home directory (/home/wangbo1) not found
+ 
+2019-01-15 20:19:48,634 ERROR  1
+ 
+2019-01-15 20:19:49,785 INFO  SAMBA USER:wangbo1  was deleted. 
+2019-01-15 20:54:35,212 INFO  Kname: samba_conf was get. 
+2019-01-15 20:54:35,215 INFO  Kname: samba_conf was get. 
+2019-01-15 20:54:35,215 INFO  Kname: samba_conf was get. 
+2019-01-15 20:54:58,466 INFO  USER wangbo1was add to db. 
+2019-01-15 20:54:58,542 INFO  User was created. 
+2019-01-15 20:54:59,045 INFO  SAMBA USER:wangbo1was added. 
+2019-01-15 20:54:59,047 ERROR  Internal Server Error: /consumer/add_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 49, in add_user
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-15 20:55:11,836 ERROR  Internal Server Error: /consumer/reset_pwd 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 76, in reset_pwd
+    wsuser.wsuser(name).wudel()
+NameError: global name 'name' is not defined
+2019-01-15 20:59:40,041 INFO  Kname: samba_conf was get. 
+2019-01-15 20:59:40,045 INFO  Kname: samba_conf was get. 
+2019-01-15 20:59:40,045 INFO  Kname: samba_conf was get. 
+2019-01-15 20:59:49,507 INFO  SAMBA USER:wangbo1  was deleted. 
+2019-01-15 20:59:49,589 INFO  SAMBA USER:wangbo1was added. 
+2019-01-15 20:59:49,632 INFO  SAMBA USER:wangbo1was enabled. 
+2019-01-15 20:59:49,655 ERROR  Internal Server Error: /consumer/reset_pwd 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 81, in reset_pwd
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-15 21:10:39,531 INFO  Kname: samba_conf was get. 
+2019-01-15 21:10:39,535 INFO  Kname: samba_conf was get. 
+2019-01-15 21:10:39,536 INFO  Kname: samba_conf was get. 
+2019-01-15 21:10:44,998 INFO  SAMBA USER:wangbo1was stoped. 
+2019-01-15 21:10:44,999 ERROR  Internal Server Error: /consumer/lock_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 99, in user_lock
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-15 21:22:51,716 INFO  Kname: samba_conf was get. 
+2019-01-15 21:22:51,718 INFO  Kname: samba_conf was get. 
+2019-01-15 21:22:51,719 INFO  Kname: samba_conf was get. 
+2019-01-15 21:29:14,010 INFO  Kname: samba_conf was get. 
+2019-01-15 21:29:14,015 INFO  Kname: samba_conf was get. 
+2019-01-15 21:29:14,015 INFO  Kname: samba_conf was get. 
+2019-01-15 22:03:01,818 INFO  Kname: samba_conf was get. 
+2019-01-15 22:03:01,819 INFO  Kname: samba_conf was get. 
+2019-01-15 22:03:01,820 INFO  Kname: samba_conf was get. 
+2019-01-15 22:03:14,364 INFO  SAMBA USER:wangbo1was enabled. 
+2019-01-15 22:03:14,407 ERROR  Internal Server Error: /consumer/lock_user 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/code/samba/web/consumer/views.py", line 99, in user_lock
+    return JsonResponse(json.dumps({"success":True}))
+  File "/data/django/lib/python2.7/site-packages/django/http/response.py", line 532, in __init__
+    raise TypeError('In order to allow non-dict objects to be '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False
+2019-01-15 22:31:33,298 INFO  Kname: samba_conf was get. 
+2019-01-15 22:31:33,301 INFO  Kname: samba_conf was get. 
+2019-01-15 22:31:33,301 INFO  Kname: samba_conf was get. 
+2019-01-15 22:41:21,914 INFO  Kname: samba_conf was get. 
+2019-01-15 22:41:21,915 INFO  Kname: samba_conf was get. 
+2019-01-15 22:41:21,916 INFO  Kname: samba_conf was get. 
+2019-01-15 22:42:36,008 INFO  Kname: samba_conf was get. 
+2019-01-15 22:42:36,009 INFO  Kname: samba_conf was get. 
+2019-01-15 22:42:36,010 INFO  Kname: samba_conf was get. 
+2019-01-15 23:00:40,579 INFO  Kname: samba_conf was get. 
+2019-01-15 23:00:40,580 INFO  Kname: samba_conf was get. 
+2019-01-15 23:00:40,583 INFO  Kname: samba_conf was get. 
+2019-01-15 23:00:46,594 WARNING  Not Found: /department/lock_department 
+2019-01-15 23:00:46,658 WARNING  Not Found: /department/lock_department 
+2019-01-15 23:05:01,723 WARNING  Not Found: /department/delete_department 
+2019-01-15 23:05:05,314 WARNING  Not Found: /department/edit_department 
+2019-01-15 23:21:19,103 WARNING  Not Found: /department/lock_department 
+2019-01-15 23:21:57,702 INFO  Kname: samba_conf was get. 
+2019-01-15 23:21:57,703 INFO  Kname: samba_conf was get. 
+2019-01-15 23:21:57,704 INFO  Kname: samba_conf was get. 
+2019-01-15 23:22:08,631 WARNING  Not Found: /department/lock_department 

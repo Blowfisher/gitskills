@@ -9,11 +9,11 @@ logger = logging.getLogger('django')
 
 
 class wsuser(object):
-    def __init__(self,name,pwd=None,lock=False,unlock=False,):
+    def __init__(self,name,pwd=None,lock=False,unlock=True):
         self._name = name
         self._pwd = pwd
-        self.Lock = Lock
-        self.Unlock = Unlock
+        self.Lock = lock
+        self.Unlock = unlock
 
         global err
         cmd = """ grep -w  %s /etc/passwd ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%self._name
@@ -30,16 +30,16 @@ class wsuser(object):
         if err:
             logger.error(err)
         else:
-            logger.info('SAMBA USER:'+self.name +'was added.')
+            logger.info('SAMBA USER:'+self._name +'was added.')
     
     def wudel(self):
-        self._cmd = """smbpasswd -x %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%self._name
+        self._cmd = """pdbedit -x %s ;if [ $? -ne 0 ];then echo 1 >&2;fi"""%self._name
         data = Popen(self._cmd,shell=True,stderr=PIPE,stdout=PIPE)
         err = data.stderr.read()
         if err:
             logger.error(err)
         else:
-            logger.info('SAMBA USER:'+self.name +'was deleted.')
+            logger.info('SAMBA USER:'+  self._name +'  was deleted.')
 
     def wupause(self):
         self._cmd = """smbpasswd -d %s; if [ $? -ne 0 ];then echo 1 >&2;fi"""%self._name
@@ -48,7 +48,7 @@ class wsuser(object):
         if err:
             logger.error(err)
         else:
-            logger.info('SAMBA USER:'+self.name +'was stoped.')
+            logger.info('SAMBA USER:'+self._name +'was stoped.')
         
     def wuenable(self):
         self._cmd = """smbpasswd -e %s; if [ $? -ne 0 ];then echo 1 >&2;fi"""%self._name
@@ -57,7 +57,7 @@ class wsuser(object):
         if err:
             logger.error(err)
         else:
-            logger.info('SAMBA USER:'+self.name +'was enabled.')
+            logger.info('SAMBA USER:'+self._name +'was enabled.')
 
 if __name__ == '__main__':
     Choice = input('请选择操作：1 添加、2 删除、3 修改、4 禁用、5 启用:')
