@@ -1,4 +1,4 @@
-# samba for web application
+The Web application of Samba
 
 Create a new branch dev.
 Features.
