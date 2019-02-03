@@ -11,7 +11,7 @@ class Dpt_user(models.Model):
     @classmethod
     def creator(cls,username,userdesc,dpt_name):
         b = Dpt_user()
-        b.Dpt_name = dpt_name
+        b.dptname = dpt_name
         b.userdesc = userdesc
         b.username = username
         return b

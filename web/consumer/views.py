@@ -46,7 +46,7 @@ def add_user(request):
     for i in user:
         if name == i["username"]:
             uid = i["id"]
-    return JsonResponse(json.dumps({"success":True}))
+    return JsonResponse({"success":True})
 
 def user_edit(request):
     name = request.POST.get('uname','')
@@ -68,7 +68,7 @@ def user_edit(request):
         wsuser.wsuser(name,pwd).wuadd()
         wsuser.wsuser(name,unlock=True).wuenable()
     Sa_user.objects.filter(id=uid).update(username=name,desc=desc,userpwd=pwd,user_role=role)
-    return JsonResponse(json.dumps({"uname":name,"uid":uid,"role":role,"desc":desc,"success":True}))    
+    return JsonResponse({"uname":name,"uid":uid,"role":role,"desc":desc,"success":True})    
 
 def reset_pwd(request):
     name = request.POST.get('uname','')
@@ -77,8 +77,8 @@ def reset_pwd(request):
     wsuser.wsuser(name).wudel()
     wsuser.wsuser(name,pwd).wuadd()
     wsuser.wsuser(name,unlock=True).wuenable()
-    Sa_user.objects.filter(id=uid).update(userpwd=pwd)
-    return JsonResponse(json.dumps({"success":True}))    
+    Sa_user.objects.filter(id=uid).update(userpwd=pwd,user_locked=False,stat=True)
+    return JsonResponse({"success":True})    
     
 
 
@@ -96,12 +96,10 @@ def user_lock(request):
         wsuser.wsuser(name,unlock=True).wuenable()
         userid.update(stat = True)
         userid.update(user_locked = False)
-    return JsonResponse(json.dumps({"success":True}))    
+    return JsonResponse({"success":True})    
 
 def user_delete(request):
     uid = request.POST.get('uid',' ')
-    logger.info("----------------------")
-    logger.info(uid)
     userid = Sa_user.objects.get(id=uid)
     Dpt_user.objects.filter(username=userid.username).delete()
     userhandler.user_del(userid.username)
