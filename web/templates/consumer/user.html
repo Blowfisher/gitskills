@@ -244,30 +244,9 @@ $("#user_add_btn").click(function(){
 			data: {"username":uname,"role":urole,"desc":udesc,"pwd":pwd1},
 			})
 			.done(function(data) {
-                           if (data.success){
-                           let example = $('tr').last().clone();
-                           if (example === ''){ example = tr_example};
-                           let id_value = example.attr('data_row_id',(parseInt($('tr').last().attr('data_row_id'))+1));
-                           let td_list = example.children();
-                           let j =0;
-                           example.children().first().children().attr('data_check_box',data.id);
-                           example.children().first().next().text(uname);
-                           example.children().first().next().next().text(udesc);
-                           example.children().children().first().attr('data_check_box',data.id);
-                           if(urole === "1"){
-                            let role_name = '系统管理员';
-                           }else if(urole === "2"){
-                            let role_name = '部门管理员';
-                           }else if(urole === "3"){
-                            let role_name = '用户';
-                           };
-                           example.children().first().next().next().next().children().text(role_name);
-                           for (let i of td_list){
-                              $(i).attr('data_cell_id',id_value + '-'+j) ;
-                           };
-                          $('tbody').append(example);}else {
-                           alert("User add Failure.")
-                          } 
+                          if (data.success){
+                          function1('/consumer');
+                         }
 			})
 			.fail(function() {
 			console.log("error");

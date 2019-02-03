@@ -86,6 +86,7 @@
   </form>
 </div>
 <div class="modal-footer">
+  <button type="button" class="btn btn-danger" style="float:left" id="attr_delete">删除</button>
   <button type="button" class="btn btn-info" data-dismiss="modal">返回</button>
   <input type="submit"  class="btn btn-primary" name="dp_attr_tj" value="提交">
 </div>
@@ -98,6 +99,8 @@
 $("[data_action]").click(function(){
    let action = this.getAttribute("data_action");
    let now_dpname = $("#dp_active").children().text();
+   let attr_dpname = $("[aria-expanded='true']").text();
+   if(attr_dpname){now_dpname = attr_dpname; };
    $("#department_attr").children().text(now_dpname);
       
     if (action === "edit"){
@@ -105,8 +108,10 @@ $("[data_action]").click(function(){
       let desc_name = $(this).parent().prev().text();
       $("input[name='department']").prop('value',sec_name);
       $("input[name='department_desc']").prop('value',desc_name);
+      $("#attr_delete").show();
       $("#action").modal('show');
      }else if(action === "add_attr"){
+      $("#attr_delete").hide();
       $("#action").modal('show');
       $("input[name='department']").prop('value','');
       $("input[name='department_desc']").prop('value','');
@@ -115,8 +120,9 @@ $("[data_action]").click(function(){
 $("[name='dp_attr_tj']").click(function(){
   let dpname = $("input[name='department']").prop('value'),
       dp_desc = $("input[name='department_desc']").prop('value'),
-      tmp_data = {"dpname":dpname,"dp_desc":dp_desc},
-      path = '/deploy/set_deploy';
+      section_name = $("#department_attr").children().text(),
+      tmp_data = {"key":dpname,"value":dp_desc,"section":section_name},
+      path = '/deploy/deploy_edit';
   if (dpname === ''){
     alert("⚠️  组织名称不能为空!");
     return
@@ -127,6 +133,14 @@ $("[name='dp_attr_tj']").click(function(){
    ajax_post(path,tmp_data,function1("/deploy"))
 });
 
+$("#attr_delete").click(function(){
+   let dpname = $("input[name='department']").prop('value'),
+      dp_desc = $("input[name='department_desc']").prop('value'),
+      section_name = $("#department_attr").children().text(),
+      tmp_data = {"key":dpname,"value":dp_desc,"section":section_name},
+      path = '/deploy/deploy_delete';
+   ajax_post(path,tmp_data,function1("/deploy"));
+})
 
 </script>
 {%endblock%}

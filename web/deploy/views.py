@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse,JsonResponse
 from models import *
 import sys
 import logging
@@ -29,44 +30,47 @@ def deploy_add(request):
     section = request.POST.get("section","")
     key = request.POST.get("key","")
     value = request.POST.get("value","")
-    sconf = confighandler.Config_helper(conf)
+    sconf = confhandler.Config_helper(conf)
 
     b = Sa_deploy()
     b.creator(section,key,value).save()
     sconf.set(section,key,value)
     sconf.config_save()
-    return JsonResponse(json.dumps({'section':section,'key':key,'value':value}))
+    return JsonResponse({'section':section,'key':key,'value':value})
 
 def deploy_del(request):
-    sid = request.POST.get('sid','')
+    value = request.POST.get('value','')
     section = request.POST.get('section','')
     key = request.POST.get('key','')
-    sconf = confighandler.Config_helper(conf)
+    sconf = confhandler.Config_helper(conf)
     
-    b = Sa_deploy.objects.get(id=sid)
+    b = Sa_deploy.objects.get(key_name=key,section_name=section)
     b.delete()
     sconf.Remove_key(section,key)
     sconf.config_save()
-    return JsonResponse(json.dumps({'delete':True}))
+    return JsonResponse({'delete':True})
 
 
 
 
 def deploy_edit(request):
-    sid = request.POST.get('sid','')
     section = request.POST.get('section','')
     key = request.POST.get('key','')
     value = request.POST.get('value''')
-    sconf = confighandler.Config_helper(conf)
+    sconf = confhandler.Config_helper(conf)
 
-    b = Sa_deploy.objects.get(id=sid)
-    b.section_name = section
-    b.key_name = key
-    b.value_name = value
-    b.save()
+    try:
+        b = Sa_deploy.objects.get(key_name=key,section_name=section)
+        b.section_name = section
+        b.key_name = key
+        b.value_name = value
+        b.save()
+    except Exception as e:
+        b = Sa_deploy()
+        b.creator(section,key,value).save()
     
-    sconf.set(section,key,value)
+    sconf.config_set([section,key,value])
     sconf.config_save()
-    return JsonResponse(json.dumps({'change':True}))
+    return JsonResponse({'change':True})
 
 
