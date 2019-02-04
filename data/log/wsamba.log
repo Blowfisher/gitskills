@@ -2986,3 +2986,17 @@ TypeError: In order to allow non-dict objects to be serialized set the safe para
 2019-01-15 23:21:57,703 INFO  Kname: samba_conf was get. 
 2019-01-15 23:21:57,704 INFO  Kname: samba_conf was get. 
 2019-01-15 23:22:08,631 WARNING  Not Found: /department/lock_department 
+2019-02-04 13:16:32,193 INFO  Kname: samba_conf was get. 
+2019-02-04 13:16:32,197 INFO  Kname: samba_conf was get. 
+2019-02-04 13:16:32,199 INFO  Kname: samba_conf was get. 
+2019-02-04 13:16:37,561 INFO  /deploy/ 
+2019-02-04 13:16:44,195 INFO  /deploy/ 
+2019-02-04 13:16:47,978 WARNING  Not Found: /department/delete_department 
+2019-02-04 13:16:51,895 INFO  /deploy/ 
+2019-02-04 13:17:00,602 INFO  ---------------------- 
+2019-02-04 13:17:00,602 INFO  13 
+2019-02-04 13:17:01,020 ERROR  userdel：未找到 wangbo1 的主目录“/home/wangbo1”
+ 
+2019-02-04 13:17:01,026 ERROR  1
+ 
+2019-02-04 13:17:01,164 INFO  SAMBA USER:wangbo1  was deleted. 
