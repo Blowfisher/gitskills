@@ -50,7 +50,7 @@ fi
 cd $path 
 
 #删除旧数据
-rm -rf ./*
+rm -rf web data
  
 echo "Pull WSamba program."    
 git clone -q https://github.com/Blowfisher/samba.git  && cd samba && mv ./* ../ && cd .. && rm -rf samba
