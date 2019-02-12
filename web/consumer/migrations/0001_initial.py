@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('username', models.CharField(max_length=64)),
-                ('desc', models.CharField(max_length=64)),
+                ('desc', models.CharField(max_length=255)),
                 ('userpwd', models.CharField(max_length=255)),
                 ('user_locked', models.BooleanField(default=False)),
                 ('stat', models.BooleanField(default=True)),
