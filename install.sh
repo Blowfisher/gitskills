@@ -50,10 +50,10 @@ fi
 cd $path 
 
 #删除旧数据
-rm -rf ./*
+rm -rf web data
  
 echo "Pull WSamba program."    
-git clone -q https://github.com/Blowfisher/samba.git  && cd samba && mv ./* ../ && cd .. && rm -rf samba
+git clone -q -b dev https://github.com/Blowfisher/samba.git  && cd samba && mv ./* ../ && cd .. && rm -rf samba
 
 #设置Socket 信息
 read -p "Set the server Socket information. [192.168.5.6:8081] :" ip

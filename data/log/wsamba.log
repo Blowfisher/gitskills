@@ -1906,4 +1906,55 @@ TypeError: In order to allow non-dict objects to be serialized set the safe para
 2019-01-24 22:39:08,171 INFO  /deploy/ 
 2019-01-24 22:40:50,394 INFO  /deploy/ 
 2019-01-24 22:41:05,504 INFO  /deploy/ 
+<<<<<<< HEAD
 >>>>>>> caa64a57497c7b4228410a7c0f05e943a70a6921
+=======
+2019-02-04 13:32:34,913 INFO  Kname: samba_conf was get. 
+2019-02-04 13:32:34,917 INFO  Kname: samba_conf was get. 
+2019-02-04 13:32:34,921 INFO  Kname: samba_conf was get. 
+2019-02-04 13:32:39,174 INFO  /deploy/ 
+2019-02-04 13:32:52,278 INFO  Kname: path was set. 
+2019-02-04 13:32:52,278 INFO  CONFIGFILE: /data/smb.conf was saved. 
+2019-02-04 13:32:53,704 INFO  /deploy/ 
+2019-02-04 13:33:01,169 INFO  /deploy/ 
+2019-02-04 13:33:10,326 INFO  Kname: path was set. 
+2019-02-04 13:33:10,326 INFO  CONFIGFILE: /data/smb.conf was saved. 
+2019-02-04 13:33:11,716 INFO  /deploy/ 
+2019-02-04 13:33:31,793 ERROR  Internal Server Error: /department/department_edit 
+Traceback (most recent call last):
+  File "/data/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/mnt/code/web/department/views.py", line 131, in dpt_edit
+    sconf = confighandler.Config_helper(conf)
+NameError: global name 'confighandler' is not defined
+2019-02-04 13:33:41,763 ERROR  userdel：用户“wangbo1”不存在
+1
+ 
+2019-02-04 13:33:41,769 ERROR  1
+ 
+2019-02-04 13:33:41,795 ERROR  user wangbo1 does not exist in the passdb
+1
+ 
+2019-02-04 13:33:53,917 INFO  SAMBA USER:Tom  was deleted. 
+2019-02-04 13:33:54,552 INFO  SAMBA USER:Tomwas added. 
+2019-02-04 13:33:54,589 INFO  SAMBA USER:Tomwas enabled. 
+2019-02-04 13:34:00,962 INFO  /deploy/ 
+2019-02-04 13:34:04,962 INFO  /deploy/ 
+2019-02-04 13:34:11,660 WARNING  Department :ITwas deleted. 
+2019-02-04 13:34:11,747 WARNING  Department :IT was removed. 
+2019-02-04 13:34:11,747 INFO  CONFIGFILE: /data/smb.conf was saved. 
+2019-02-04 13:35:24,889 INFO  Kname: samba_conf was get. 
+2019-02-04 13:35:24,890 INFO  Kname: samba_conf was get. 
+2019-02-04 13:35:24,891 INFO  Kname: samba_conf was get. 
+2019-02-04 13:35:24,893 INFO  /deploy/ 
+2019-02-04 13:35:42,316 INFO  False 
+2019-02-04 13:35:42,390 INFO  Department :IT was added. 
+2019-02-04 13:35:42,390 INFO  Kname: comment was set. 
+2019-02-04 13:35:42,390 INFO  Kname: valid users was set. 
+2019-02-04 13:35:42,391 INFO  CONFIGFILE: /data/smb.conf was saved. 
+2019-02-04 13:35:42,427 WARNING  Department :ITwas added. 
+2019-02-04 13:36:05,835 INFO  /deploy/ 
+2019-02-04 13:36:43,282 INFO  USER Jerrywas add to db. 
+2019-02-04 13:36:43,382 INFO  User was created. 
+2019-02-04 13:36:43,481 INFO  SAMBA USER:Jerrywas added. 
+>>>>>>> f5035500380decd88ce5e99e443cc942402c9b46
