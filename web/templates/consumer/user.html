@@ -54,7 +54,7 @@
    <span class="label label-default">用户</span>
    {%endif%}
    </td>
-   <td data_cell_id="{{forloop.counter}}-4">
+   <td data_cell_id="{{forloop.counter}}-4" user_stat='user_stat'>
     {%if user.stat%}
     <span class="label label-success" >正常</span>
     {%else%}
@@ -244,27 +244,9 @@ $("#user_add_btn").click(function(){
 			data: {"username":uname,"role":urole,"desc":udesc,"pwd":pwd1},
 			})
 			.done(function(data) {
-                           let example = $('tr').last().clone();
-                           if (example === ''){ example = tr_example};
-                           let id_value = example.attr('data_row_id',(parseInt($('tr').last().attr('data_row_id'))+1));
-                           let td_list = example.children();
-                           let j =0;
-                           example.children().first().children().attr('data_check_box',data.id);
-                           example.children().first().next().text(uname);
-                           example.children().first().next().next().text(udesc);
-                           example.children().children().first().attr('data_check_box',data.id);
-                           if(urole === "1"){
-                            let role_name = '系统管理员';
-                           }else if(urole === "2"){
-                            let role_name = '部门管理员';
-                           }else if(urole === "3"){
-                            let role_name = '用户';
-                           };
-                           example.children().first().next().next().next().children().text(role_name);
-                           for (let i of td_list){
-                              $(i).attr('data_cell_id',id_value + '-'+j) ;
-                           };
-                          $('tbody').append(example); 
+                          if (data.success){
+                          function1('/consumer');
+                         }
 			})
 			.fail(function() {
 			console.log("error");
@@ -301,13 +283,15 @@ $("#del_btn").click(function(){
         }
 	result = confirm("警告！ 此操作不可逆 是否删除？")
 	if (result){
+           for(let j of uidlist){
 		$.ajax({
 			url: '/consumer/user_delete',
 			type: 'POST',
 			dataType: 'json',
-			data: {"uid": uidlist},
+			data:{'uid': j},
 		})
-		.done(function() {
+		.done(function(data) {
+                    if(data.success){
 		    for(let i of b){
 		        if (i.checked){
 		            $(i).parent().parent().remove();
@@ -318,7 +302,9 @@ $("#del_btn").click(function(){
                        }else {
                         $("#booter_tip").show();
                      }
-                    }	
+                    }}else {
+                     alert("Delete Failure.")
+                   }	
 		})
 		.fail(function() {
 			console.log("error");
@@ -327,7 +313,7 @@ $("#del_btn").click(function(){
 			console.log("complete");
 		});
 		
-	}else{
+	}}else{
 		uidlist = []
 	}
     });
@@ -358,8 +344,8 @@ $("[data_action]").click(function(){
         $("#user_info_edit").siblings().last().children().last().prop("value",descname);
         $("#user_change").modal('show');
         $("#user_edit_btn").click(function(){
-           let path = "/consumer/edit_user";
-           let tmp_data = [loginname,descname,rolename];
+           let path = "/consumer/user_edit";
+           let tmp_data = {"desc":descname,"uname":loginname,"role":rolename,"uid":uid};
            ajax_post(path,tmp_data,function1("/consumer"));
         })
     }else if(action == "reset_pwd"){
@@ -367,9 +353,10 @@ $("[data_action]").click(function(){
         $("#repwd").modal('show');
         $("#myModalLabel").text(loginname);
         $("#rpwd_submit").click(function(){
-            let path = '/';
-            let tmp_data =  $("#new_pwd").prop("value");
-            if (tmp_data.length < 6){
+            let path = '/consumer/reset_pwd';
+            let pwd1 =  $("#new_pwd").prop("value");
+            let tmp_data = {"pwd":pwd1,"uid":uid,"uname":loginname};
+            if (pwd1.length < 6){
               alert("密码长度不足.");
               return
             };
@@ -380,14 +367,14 @@ $("[data_action]").click(function(){
         if (result){
             console.log("locked.");
             let path = "/consumer/lock_user";
-            let tmp_data = loginname;
+            let tmp_data = {"uname":loginname,"uid":uid,"lock":1};
             ajax_post(path,tmp_data,function1("/consumer"));
         }
     }else if (action === "unlock"){
         let result = confirm("是否解禁 ?");
         if (result){
-            let path = "/consumer/unlock_user";
-            let tmp_data = loginname;
+            let path = "/consumer/lock_user";
+            let tmp_data = {"uname":loginname,"uid":uid,"lock":0};
             ajax_post(path,tmp_data,function1("/consumer"));
         }
     }
@@ -398,5 +385,16 @@ $("#department_refresh").click(function(){
   location.assign("/consumer");
 });
 
+let user_stat = $("[user_stat='user_stat']").children();
+for(let i of user_stat){
+  if($(i).text() === '禁用'){
+    let li_meta = $(i).parent().next().children().children().last().children();  
+    li_meta.last().attr("class",'');
+    li_meta.last().prev().attr("class","disabled");
+  }
+};
+
+
 </script>
+
 {%endblock%}

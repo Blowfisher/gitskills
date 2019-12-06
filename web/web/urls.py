@@ -22,8 +22,8 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',views.dashboard),
     url(r'^browse/$',include(browse.urls)),
-    url(r'^consumer/$',include(consumer.urls)),
-    url(r'^department/$',include(department.urls)),
+    url(r'^consumer/',include(consumer.urls)),
+    url(r'^department/',include(department.urls)),
     url(r'^guider/$',views.guider),
-    url(r'^deploy/$',include(deploy.urls)),
+    url(r'^deploy/',include(deploy.urls)),
 ]

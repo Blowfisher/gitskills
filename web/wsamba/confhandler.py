@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#coding:utf8
+#coding:utf-8
 
 import os
 import sys
@@ -14,18 +14,19 @@ wsamba_log= os.path.join(wsamba,"log/wsamba.log")
 logger = logging.getLogger('django')
 
 
-
 class Config_helper(ConfigParser):
     def __init__(self,smb_config):
         self.smb_conf = smb_config
         self.config = ConfigParser(allow_no_value=True)
         self.config.read(self.smb_conf)
     def config_save(self):
+        reload(sys)
+        sys.setdefaultencoding('utf-8')
         with open(self.smb_conf,'wb+') as f:
             self.config.write(f) 
         logger.info('CONFIGFILE: '+self.smb_conf+' was saved.')
 
-    def config_set(self,args):
+    def config_set(self,*args):
         """
 	args is a list nest structor
         in a little list. need have 3 parameter. is seciton option value

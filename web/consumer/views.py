@@ -26,12 +26,11 @@ def consumer(request):
         return render(request,"consumer/user.html",{"users":user,"dpment":dpment,"role":role})
 
 
-def user_add(request):
+def add_user(request):
     name = request.POST.get('username','')
     pwd = request.POST.get('pwd','')
     role = request.POST.get('role','')
     desc = request.POST.get('desc','')
-
     if Sa_user.objects.filter(username=name):
         return JsonResponse({"success":False,"msg":"用户已存在!"})
     b = Sa_user()
@@ -47,7 +46,7 @@ def user_add(request):
     for i in user:
         if name == i["username"]:
             uid = i["id"]
-    return JsonResponse(json.dumps({"uid":uid,"uname":name,"role":role,"desc":desc,"stat":True}))
+    return JsonResponse({"success":True})
 
 def user_edit(request):
     name = request.POST.get('uname','')
@@ -56,7 +55,8 @@ def user_edit(request):
     desc = request.POST.get('desc','')
 
     userid = Sa_user.objects.get(id=uid)
-
+    logger.info(userid.userpwd + "-------------------")
+    pwd = userid.userpwd
     if userid.username != name:
         userhandler.user_del(userid.username)
         userhandler.admin_add(name)
@@ -65,44 +65,45 @@ def user_edit(request):
         wsuser.wsuser(name).wuadd(name,pwd)
         wsuser.wsuser(name,lock=True).wuenable()
     else:
-        wsuser.wsuser(name).wuadd(name,pwd)
+        wsuser.wsuser(name,pwd).wuadd()
         wsuser.wsuser(name,unlock=True).wuenable()
-    userid.username = name
-    userid.desc = desc
-    userid.userpwd = pwd 
-    userid.user_role = role
-    userid.save()
-    return JsonResponse(json.dumps({"uname":name,"uid":uid,"role":role,"desc":desc,"stat":True}))    
+    Sa_user.objects.filter(id=uid).update(username=name,desc=desc,userpwd=pwd,user_role=role)
+    return JsonResponse({"uname":name,"uid":uid,"role":role,"desc":desc,"success":True})    
 
+def reset_pwd(request):
+    name = request.POST.get('uname','')
+    pwd = request.POST.get('pwd','')
+    uid = request.POST.get('uid','')
+    wsuser.wsuser(name).wudel()
+    wsuser.wsuser(name,pwd).wuadd()
+    wsuser.wsuser(name,unlock=True).wuenable()
+    Sa_user.objects.filter(id=uid).update(userpwd=pwd,user_locked=False,stat=True)
+    return JsonResponse({"success":True})    
+    
 
 
 def user_lock(request):
     name = request.POST.get('uname','')
     uid = request.POST.get('uid','')
-    pwd = request.POST.get('pwd','')
-    role = request.POST.get('role','')
-    desc = request.POST.get('desc','')
-    user_locked = request.POST.get('lock','')
+    lock = int(request.POST.get('lock',''))
 
-    userid = Sa_user.objects.get(id=uid)
-    if user_locked:
+    userid = Sa_user.objects.filter(id=uid)
+    if lock:
         wsuser.wsuser(name,lock=True).wupause()
-        userid.stat = False
-        userid.user_locked = True
-        
+        userid.update(stat = False)
+        userid.update(user_locked = True)
     else:
         wsuser.wsuser(name,unlock=True).wuenable()
-        userid.stat = True
-        userid.user_locked = False
-    return JsonResponse(json.dumps({"uname":name,"uid":uid,"role":role,"desc":desc,"stat":True}))    
+        userid.update(stat = True)
+        userid.update(user_locked = False)
+    return JsonResponse({"success":True})    
 
-def user_del(request):
-    uid = request.POST.getlist('uid','')
-    for i in uid:
-        userid = Sa_user.objects.get(id=i)
-        Dpt_user.objects.filter(username=userid.username).remove().save()
-        userhandler.user_del(userid.username)
-        wsuser.wsuser(userid.username).wudel()
-        userid.remove().save()
+def user_delete(request):
+    uid = request.POST.get('uid',' ')
+    userid = Sa_user.objects.get(id=uid)
+    Dpt_user.objects.filter(username=userid.username).delete()
+    userhandler.user_del(userid.username)
+    wsuser.wsuser(userid.username).wudel()
+    Sa_user.objects.filter(username=userid.username).delete()
     return JsonResponse({"success":True,"msg":"已删除."})
 

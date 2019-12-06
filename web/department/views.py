@@ -1,4 +1,4 @@
-#coding:utf-8
+#coding: utf-8
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 import sys
@@ -29,25 +29,34 @@ def department(request):
 
 
 def dpt_add(request):
-    dpt_name = request.POST.get('dptname','')
+    dptname1 = request.POST.get('dptname','')
 #    path = request.POST.get('path','')
-    desc = request.POST.get('desc','')
+    desc = request.POST.get('dpt_desc','')
 
-    b = Sa_dpt()
-    b.creator(dptname,desc).save()    
+    nb = Sa_dpt()
+    user_Flag = True
+    try:
+        Sa_dpt.objects.get(dptname=dptname1)       
+    except Exception as e:
+        sa_dpt =  False
+        logger.info(sa_dpt)
+        nb.creator(dptname1,desc).save()    
+    if sa_dpt:
+        return JsonResponse({"dptname":dptname1,"success":False})
     
     b = Sa_deploy()
-    b.creator(dptname,"comment",desc).save()
-    b.creator(dptname,"valid users","@"+dptname).save()
+    b.creator(dptname1,"valid users","@%s"%dptname1).save()
+    b.creator(dptname1,"comment",desc).save()
     
     sconf = confhandler.Config_helper(conf)
-    sconf.Create_section(dptname)
-    sconf.config_set([[dptname,'comment',desc],[dptname,"valid users","@"+dptname]])
+    sconf.Create_section(dptname1)
+    sconf.config_set([dptname1,'comment',desc])
+    sconf.config_set([dptname1,"valid users","@"+dptname1])
     sconf.config_save()
 
-    userhandler.dpt_add(name)
-    bb = Sa_dpt.objects.get(dptname=dpt_name)
-    return JsonResponse(json.dumps({"did":bb.id,"dptname":dpt_name,"desc":desc,"stat":True}))
+    userhandler.dpt_add(dptname1)
+    bb = Sa_dpt.objects.get(dptname=dptname1)
+    return JsonResponse({"success":True})
 
 def dpt_user(request):
     gid = request.POST.get('gid','')
@@ -73,13 +82,21 @@ def dpt_user(request):
         for j in user_dpt:
             group.append(j["dptname"])
         userhandler.cgroup(i,group)
-    return 
+    return JsonResponse({"success":True})
 
 def dpt_edit(request):
     gid = request.POST.get('gid','')
     dpt_name = request.POST.get('dptname','')
     desc = request.POST.get('desc','')
-    b = Sa_dpt.objects.get(id=gid)
+    Flag = False
+    try:
+        b = Sa_dpt.objects.get(id=gid)
+    except Exception as e:
+        Flag = True
+        logger.info(e)
+    
+    if Flag:
+        return JsonResponse({"msg":"User Not define."})
     
     if dpt_name != b.dptname:
         sconf = confighandler.Config_helper(conf)
@@ -122,37 +139,41 @@ def dpt_edit(request):
     
         sconf.set(dpt_name,'comment',desc)
         sconf.config_save()
-    return 
+    return JsonResponse({"success":True})
 
 def dpt_del(request):
     gid = request.POST.get('gid','')
     dpt_name = request.POST.get('dptname','')
-    sconf = confighandler.Config_helper(conf)
+    sconf = confhandler.Config_helper(conf)
     sa_dpt = Sa_dpt.objects.get(id=gid)
     sa_deploy = Sa_deploy.objects.filter(section_name=dpt_name)
     dpt_user = Dpt_user.objects.filter(dptname=dpt_name)
     userhandler.dpt_del(dpt_name)
     
-    sconf.remove_section(dpt_name)
     sa_dpt.delete()
     sa_deploy.delete()
+    sconf.Remove_section(dpt_name)
+    sconf.config_save()
     dpt_user.delete()
-    return
+    return JsonResponse({"success":True})
 
 def dpt_lock(request):
-    gid = request.POST.get('gid','')
+    gid = request.POST.get('pid','')
     dpt_name = request.POST.get('dptname','')
-    dpt_locked = request.POST.get('dpt_locked','')
-    if lock:
+    lock = request.POST.get('lock','')
+    Flag = int(lock)
+    if Flag:
+        logger.info(gid+'-----------------------------'+dpt_name+'----'+lock)
         sa_dpt = Sa_dpt.objects.get(id=gid)      
         sa_dpt.stat = False
-        sa_dpt.dpt_lock = True
+        sa_dpt.dpt_locked = True
         sa_dpt.save()
         userhandler.dpt_del(dpt_name)
     else:
+        logger.info(gid+'-----------------------------'+dpt_name+'----'+lock)
         sa_dpt = Sa_dpt.objects.get(id=gid)      
         sa_dpt.stat = True
-        sa_dpt.dpt_lock = False
+        sa_dpt.dpt_locked = False
         sa_dpt.save()
         userhandler.dpt_add(dpt_name)
-    return 
+    return JsonResponse({"success":True})
